@@ -187,7 +187,7 @@ Do not mark a task complete without verification.
 - [x] 15.6 Complete TEST-CASES
 - [x] 15.7 Complete SECURITY
 - [x] 15.8 Complete DEPLOYMENT
-- [ ] 15.9 Complete DEVELOPER-EXPERIENCE
+- [x] 15.9 Complete DEVELOPER-EXPERIENCE
 
 ---
 
@@ -205,22 +205,22 @@ Do not mark a task complete without verification.
 
 # 17. GitHub
 
-- [ ] 17.1 Create meaningful commit
-- [ ] 17.2 Push repository
-- [ ] 17.3 Open public repository
+- [x] 17.1 Create meaningful commit
+- [x] 17.2 Push repository
+- [x] 17.3 Open public repository
 - [ ] 17.4 Verify README rendering
 - [ ] 17.5 Verify LICENSE
-- [ ] 17.6 Verify `.env` absent
-- [ ] 17.7 Verify API key absent
+- [x] 17.6 Verify `.env` absent
+- [x] 17.7 Verify API key absent
 - [ ] 17.8 Verify documentation links
 
 ---
 
 # 18. Submission
 
-- [ ] 18.1 Record actual human time
-- [ ] 18.2 Finish developer-experience report
-- [ ] 18.3 Record known issues
-- [ ] 18.4 Record Voxgig suggestions
-- [ ] 18.5 Copy repository URL
+- [x] 18.1 Record actual human time
+- [x] 18.2 Finish developer-experience report
+- [x] 18.3 Record known issues
+- [x] 18.4 Record Voxgig suggestions
+- [x] 18.5 Copy repository URL
 - [ ] 18.6 Prepare submission message
