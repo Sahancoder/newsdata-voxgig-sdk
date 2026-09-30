@@ -1,0 +1,1440 @@
+VOXGIG SDK MINI TASK
+
+
+# MASTER ENGINEERING PROMPT — VOXGIG SDK MINI TASK
+
+You are acting as a Senior Software Engineer, SDK Engineer, QA Engineer, Security Engineer, Technical Writer, and DevOps Engineer.
+
+Your job is to help me complete a small professional open-source SDK project for the Voxgig developer exercise.
+
+Do NOT blindly implement everything at once.
+
+Work sequentially according to the numbered tasks below.
+
+After completing each major task:
+1. Verify the result.
+2. Report what was completed.
+3. Report errors or warnings.
+4. Update `docs/TASKS.md`.
+5. Continue only when the current task is stable.
+
+Do not hide generator bugs or manually "fix" generator behavior without documenting what happened. Developer-experience observations are an important deliverable.
+
+---
+
+# 0. PROJECT CONTEXT
+
+## 0.1 Objective
+
+Create an open-source SDK for a selected SaaS API using the Voxgig SDK Generator.
+
+Current candidate:
+
+NewsData.io
+
+Before implementation, verify that this API is still suitable.
+
+## 0.2 Core Assignment Requirements
+
+The project must:
+
+- Use the Voxgig SDK Generator.
+- Target an API not already represented in the current Voxgig open-source SDK catalogue.
+- Prefer an API with free API access.
+- Use a real API key for local testing where appropriate.
+- Be published in my own GitHub/GitLab account.
+- Be open source.
+- Use the MIT License.
+- Include a short developer-experience report.
+- Document generator bugs, limitations, confusing behavior, and suggestions.
+- Keep human effort aligned with the requested 30-minute time box.
+
+Do not artificially over-engineer the implementation.
+
+The repository may demonstrate scalable engineering practices, but the actual assignment remains a small SDK-generation exercise.
+
+---
+
+# 1. PRE-FLIGHT VALIDATION
+
+## 1.1 Verify API Candidate
+
+Check the selected API.
+
+Verify:
+
+- API is currently operational.
+- API documentation exists.
+- Free API access/free trial exists.
+- API key can be obtained without unnecessary paid commitment.
+- OpenAPI/Swagger specification exists or can reasonably be used with Voxgig.
+- Terms allow legitimate API development/testing.
+
+Record findings.
+
+## 1.2 Verify Voxgig Catalogue
+
+Search the current Voxgig SDK catalogue.
+
+Search using:
+
+- Company name
+- API name
+- Product name
+- Common spelling variations
+- Repository naming variations
+
+Do not manually inspect hundreds of repositories one by one if searchable catalogue/API/GitHub mechanisms are available.
+
+## 1.3 Decision
+
+If the selected API already exists in Voxgig's catalogue:
+
+STOP using that candidate.
+
+Find another suitable SaaS API and repeat Tasks 1.1–1.3.
+
+If no matching Voxgig SDK is found, record:
+
+`Candidate accepted for mini-task.`
+
+Do not claim absolute non-existence if the search mechanism cannot guarantee exhaustive coverage. State how the catalogue was checked.
+
+## 1.4 Record Evidence
+
+Create/update:
+
+`docs/REQUIREMENTS.md`
+
+Record:
+
+- Selected API
+- API documentation source
+- OpenAPI source
+- Free-tier information
+- Catalogue verification method
+- Date checked
+- Assignment requirements
+
+---
+
+# 2. LOCAL DEVELOPMENT ENVIRONMENT
+
+## 2.1 Check Required Software
+
+Check:
+
+- Git
+- Node.js
+- npm
+- GitHub CLI if available
+
+Record versions.
+
+Example:
+
+```text
+node --version
+npm --version
+git --version
+```
+
+## 2.2 Validate Node Compatibility
+
+Check the Voxgig SDK Generator documentation for supported Node/npm versions.
+
+Do not upgrade/downgrade the machine unnecessarily.
+
+## 2.3 Create Working Directory
+
+Create a clean project workspace.
+
+Use an appropriate repository name such as:
+
+`newsdata-voxgig-sdk`
+
+or the final selected API equivalent.
+
+## 2.4 Initialize Git
+
+Initialize Git only when appropriate.
+
+Check:
+
+```text
+git status
+```
+
+Ensure the repository starts clean.
+
+---
+
+# 3. SECURITY FOUNDATION
+
+This task must happen BEFORE storing any API credentials.
+
+## 3.1 Create `.gitignore`
+
+At minimum ignore:
+
+```text
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+coverage/
+
+*.log
+.DS_Store
+```
+
+Add other generator/build-specific temporary files only when appropriate.
+
+## 3.2 Create `.env.example`
+
+Create:
+
+```text
+NEWSDATA_API_KEY=
+```
+
+Use the correct environment-variable name if another API is selected.
+
+Never place a real credential in `.env.example`.
+
+## 3.3 Local `.env`
+
+The real API key may exist locally in:
+
+`.env`
+
+Never commit this file.
+
+## 3.4 Secret Rules
+
+Never place real credentials in:
+
+- README
+- source files
+- tests
+- screenshots
+- logs
+- examples
+- GitHub Actions YAML
+- issue reports
+- commit messages
+- documentation
+
+## 3.5 Pre-Commit Secret Verification
+
+Before every push, search tracked files for:
+
+- API key values
+- `api_key`
+- `apikey`
+- `token`
+- `secret`
+- Authorization headers
+
+Differentiate legitimate placeholder/configuration names from actual credentials.
+
+## 3.6 Accidental Exposure
+
+If a real credential is ever committed:
+
+1. Stop.
+2. Revoke/rotate the credential immediately.
+3. Generate a replacement.
+4. Remove the exposed secret from Git history if necessary.
+5. Verify repository history.
+6. Never continue using the compromised key.
+
+Document security practices in:
+
+`docs/SECURITY.md`
+
+---
+
+# 4. INITIAL REPOSITORY STRUCTURE
+
+Create only supporting directories that do not conflict with Voxgig's generated structure.
+
+Target structure:
+
+```text
+project-root/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── .env.example
+│
+├── docs/
+│   ├── REQUIREMENTS.md
+│   ├── TASKS.md
+│   ├── ARCHITECTURE.md
+│   ├── IMPLEMENTATION.md
+│   ├── TESTING.md
+│   ├── SECURITY.md
+│   ├── DEPLOYMENT.md
+│   └── DEVELOPER-EXPERIENCE.md
+│
+├── examples/
+│
+├── tests/
+│   ├── unit/
+│   ├── component/
+│   ├── integration/
+│   └── system/
+│
+└── openapi/
+```
+
+IMPORTANT:
+
+Do not force generated Voxgig files into this proposed structure.
+
+When Voxgig creates its own structure, preserve it unless there is a strong technical reason not to.
+
+Update documentation to describe the actual structure.
+
+---
+
+# 5. TASK TRACKING
+
+Create:
+
+`docs/TASKS.md`
+
+Use checkboxes.
+
+Example:
+
+```text
+- [ ] Task
+- [x] Completed task
+```
+
+Track:
+
+- API verification
+- Catalogue verification
+- Environment
+- Security
+- OpenAPI
+- Generation
+- Build
+- Unit testing
+- Component testing
+- Integration testing
+- System testing
+- UAT
+- Documentation
+- Final QA
+- Repository publication
+- Submission
+
+Do not mark anything completed until verified.
+
+---
+
+# 6. OPENAPI ACQUISITION
+
+## 6.1 Locate Official Specification
+
+Prefer the API provider's official:
+
+- `openapi.json`
+- `openapi.yaml`
+- Swagger/OpenAPI endpoint
+- Official repository
+
+Avoid random third-party specifications when an official one exists.
+
+## 6.2 Verify Specification
+
+Determine:
+
+- OpenAPI version
+- API title
+- Base URL
+- Authentication mechanism
+- Available operations
+- Schemas/models
+
+## 6.3 Save Specification
+
+If appropriate, place a copy/reference under:
+
+`openapi/`
+
+Example:
+
+`openapi/openapi.json`
+
+Respect the provider's licensing and terms.
+
+## 6.4 Validate Specification
+
+Check that it parses correctly.
+
+Record warnings.
+
+Do not silently rewrite the specification just to make the generator succeed.
+
+If modifications are necessary, preserve/document:
+
+- Original behavior
+- Modification
+- Reason
+- Generator error that required it
+
+---
+
+# 7. VOXGIG SDK GENERATION
+
+This is the CORE assignment.
+
+## 7.1 Read Voxgig Documentation
+
+Confirm the current generator usage before running commands.
+
+Do not rely solely on remembered syntax.
+
+## 7.2 Record Generator Version
+
+Record:
+
+- Voxgig generator version
+- Node version
+- npm version
+- Operating system
+
+Add this to:
+
+`docs/DEVELOPER-EXPERIENCE.md`
+
+## 7.3 Run Generator
+
+Generate the SDK using the official Voxgig SDK Generator.
+
+Record the exact command.
+
+## 7.4 Capture Initial Experience
+
+Immediately record:
+
+- Was installation obvious?
+- Was CLI usage obvious?
+- Were prompts understandable?
+- Did documentation match actual behavior?
+- Was generation fast?
+- Were warnings understandable?
+- Were errors actionable?
+
+Do not wait until the end and rely on memory.
+
+## 7.5 Inspect Generated Files
+
+Identify:
+
+- Generated source
+- Package configuration
+- Client code
+- API operations
+- Models
+- Authentication
+- Build scripts
+- Existing tests
+- Existing examples
+
+## 7.6 Preserve Generator Output
+
+Avoid unnecessary manual modification.
+
+If generated code contains an issue, first document the issue.
+
+Separate:
+
+`Generator output problem`
+
+from:
+
+`Our custom code problem`
+
+This distinction is important for the report.
+
+---
+
+# 8. DEPENDENCY INSTALLATION
+
+## 8.1 Install Dependencies
+
+Use the package manager expected by the generated project.
+
+## 8.2 Record Errors
+
+If installation produces:
+
+- warnings
+- peer dependency conflicts
+- deprecated packages
+- security warnings
+- missing packages
+
+record them.
+
+## 8.3 Do Not Randomly Upgrade Dependencies
+
+Do not modify generated dependencies merely to make warnings disappear.
+
+Only modify when necessary and document the reason.
+
+---
+
+# 9. BUILD VERIFICATION
+
+## 9.1 Identify Build Command
+
+Inspect `package.json`.
+
+Use the project's intended build command.
+
+## 9.2 Build
+
+Run the build.
+
+## 9.3 Verify Output
+
+Confirm:
+
+- Build exits successfully.
+- Expected files are generated.
+- No TypeScript/compiler errors remain.
+
+## 9.4 Failure Handling
+
+If build fails:
+
+1. Capture error.
+2. Determine whether generator-related.
+3. Record it.
+4. Apply minimum necessary correction if appropriate.
+5. Record the correction.
+
+---
+
+# 10. AUTHENTICATION IMPLEMENTATION
+
+## 10.1 Understand Authentication
+
+Determine exactly how the selected API authenticates.
+
+For example:
+
+- query parameter
+- header
+- bearer token
+
+## 10.2 Environment Variable
+
+Load the API key from an environment variable.
+
+Never hard-code it.
+
+## 10.3 Missing Credential
+
+Ensure examples/tests fail clearly when the required variable is absent.
+
+Example conceptual message:
+
+`NEWSDATA_API_KEY is required for integration testing.`
+
+Do not print the secret.
+
+---
+
+# 11. BASIC SDK USAGE EXAMPLE
+
+Create a minimal example under:
+
+`examples/basic-usage.*`
+
+The example should demonstrate:
+
+1. Import SDK.
+2. Read configuration/API key from environment.
+3. Initialize client.
+4. Call one safe API operation.
+5. Print a small non-sensitive result.
+6. Handle errors.
+
+Keep it simple.
+
+The assignment is testing developer experience, not application development.
+
+---
+
+# 12. UNIT TESTING
+
+Create focused unit tests where appropriate.
+
+## 12.1 Configuration Test
+
+Verify configuration/client creation.
+
+## 12.2 Parameter Test
+
+Verify query/parameter handling where meaningful.
+
+## 12.3 Validation Test
+
+Verify required values.
+
+## 12.4 Error Test
+
+Verify predictable local error behavior.
+
+## 12.5 No Real API Dependency
+
+Unit tests should not require the real NewsData API.
+
+---
+
+# 13. COMPONENT TESTING
+
+For this SDK, "component" means SDK modules/services, NOT UI components.
+
+## 13.1 Client Component
+
+Test SDK client behavior as a module.
+
+## 13.2 Service Component
+
+Test a generated API service/operation where practical.
+
+## 13.3 Mock External HTTP Where Appropriate
+
+Component tests should preferably not consume real API quota.
+
+---
+
+# 14. INTEGRATION TESTING
+
+Integration tests verify:
+
+`SDK → Internet → Real API`
+
+## 14.1 Separate Integration Tests
+
+Do not make normal unit tests depend on a live API.
+
+## 14.2 Real Credential
+
+Read the API key only from the local environment.
+
+## 14.3 Happy Path
+
+Test one legitimate API request.
+
+Expected:
+
+- Request accepted.
+- Successful HTTP status.
+- Response structure is usable.
+
+## 14.4 Authentication Failure
+
+Where safe and reasonable, verify invalid/missing authentication behavior without exposing credentials.
+
+## 14.5 API Quota
+
+Minimize real calls.
+
+Do not repeatedly consume free-tier quota unnecessarily.
+
+---
+
+# 15. SYSTEM TESTING
+
+Test the SDK as an external developer would.
+
+Scenario:
+
+```text
+Clean environment
+→ install dependencies/package
+→ configure environment variable
+→ import SDK
+→ create client
+→ make API call
+→ receive response
+```
+
+Verify the complete workflow.
+
+Document result.
+
+---
+
+# 16. USER ACCEPTANCE TESTING
+
+Treat another developer as the user.
+
+UAT acceptance criteria:
+
+## 16.1 Repository Understanding
+
+Can a new developer understand what the repository does?
+
+## 16.2 Installation
+
+Can they follow README installation instructions?
+
+## 16.3 Configuration
+
+Can they understand how to configure their own API key?
+
+## 16.4 Quick Start
+
+Can they copy/adapt the example?
+
+## 16.5 Successful Request
+
+Can they receive a real API response?
+
+## 16.6 Security
+
+Do instructions avoid encouraging secret commits?
+
+## 16.7 Documentation
+
+Can developers find deeper documentation easily?
+
+Record UAT results in:
+
+`docs/TESTING.md`
+
+---
+
+# 17. SECURITY TESTING
+
+Verify:
+
+## 17.1 `.env`
+
+`.env` must not be tracked.
+
+## 17.2 Git Status
+
+Inspect staged and tracked files.
+
+## 17.3 Repository Search
+
+Search for actual credential values.
+
+## 17.4 Logging
+
+Ensure examples/tests don't print authentication credentials.
+
+## 17.5 Error Handling
+
+Ensure errors do not unnecessarily expose sensitive configuration.
+
+---
+
+# 18. README
+
+Create a concise professional `README.md`.
+
+Required sections:
+
+## 18.1 Project Title
+
+## 18.2 Description
+
+Explain:
+
+- Target API
+- Voxgig generation
+- Open-source purpose
+
+## 18.3 Status
+
+Clearly identify that this project was generated/tested as part of a Voxgig SDK exercise if appropriate.
+
+## 18.4 Requirements
+
+Example:
+
+- Node.js
+- npm
+- API account/key
+
+## 18.5 Installation
+
+Provide exact commands.
+
+## 18.6 Configuration
+
+Explain environment-variable configuration.
+
+Never include a real key.
+
+## 18.7 Quick Start
+
+Provide minimal runnable usage.
+
+## 18.8 Testing
+
+Explain:
+
+- unit tests
+- integration tests
+- build
+
+## 18.9 Project Structure
+
+Briefly explain important directories.
+
+## 18.10 Documentation
+
+Link to:
+
+- Requirements
+- Architecture
+- Implementation
+- Testing
+- Security
+- Deployment/Release
+- Developer Experience
+
+## 18.11 License
+
+MIT.
+
+---
+
+# 19. ARCHITECTURE DOCUMENTATION
+
+Create:
+
+`docs/ARCHITECTURE.md`
+
+Document:
+
+```text
+OpenAPI Specification
+        ↓
+Voxgig SDK Generator
+        ↓
+Generated SDK
+        ↓
+Authentication
+        ↓
+HTTPS
+        ↓
+Target SaaS API
+```
+
+Explain:
+
+- Generation architecture
+- Runtime architecture
+- Authentication
+- Models
+- API operations
+- Testing boundaries
+
+Keep architecture proportional to project size.
+
+---
+
+# 20. IMPLEMENTATION DOCUMENTATION
+
+Create:
+
+`docs/IMPLEMENTATION.md`
+
+Document:
+
+- Technology stack
+- Generator
+- OpenAPI input
+- Generated structure
+- Authentication
+- API client
+- Example
+- Error handling
+- Custom modifications, if any
+
+IMPORTANT:
+
+There is no frontend/backend application unless specifically required.
+
+Do not invent:
+
+- React UI
+- Laravel backend
+- database
+- microservices
+
+This is an SDK/library.
+
+---
+
+# 21. TESTING DOCUMENTATION
+
+Create:
+
+`docs/TESTING.md`
+
+Sections:
+
+1. Testing objectives
+2. Unit testing
+3. Component testing
+4. Integration testing
+5. System testing
+6. User acceptance testing
+7. Security testing
+8. Test environment
+9. Test results
+10. Known limitations
+
+For each test, where practical record:
+
+- Test ID
+- Purpose
+- Preconditions
+- Steps
+- Expected result
+- Actual result
+- Status
+
+Example:
+
+```text
+UT-001
+Purpose: Client initialization
+Expected: Client initializes with valid configuration
+Actual: ...
+Status: PASS/FAIL
+```
+
+---
+
+# 22. RELEASE / DEPLOYMENT DOCUMENTATION
+
+Create:
+
+`docs/DEPLOYMENT.md`
+
+Explain that this is a library rather than a web application.
+
+Document:
+
+- Build process
+- Test process
+- GitHub distribution
+- Versioning approach
+- Potential npm publishing process
+
+Do NOT publish to npm unless explicitly required.
+
+---
+
+# 23. DEVELOPER EXPERIENCE REPORT
+
+Create:
+
+`docs/DEVELOPER-EXPERIENCE.md`
+
+This is a major assignment deliverable.
+
+Record honestly:
+
+## 23.1 Environment
+
+- OS
+- Node
+- npm
+- Voxgig generator version
+
+## 23.2 Human Time
+
+Record actual human effort.
+
+Do not fabricate timing.
+
+## 23.3 API Selection Experience
+
+Was selecting a suitable API easy?
+
+## 23.4 Documentation Experience
+
+Was Voxgig documentation clear?
+
+## 23.5 Installation Experience
+
+Was generator installation easy?
+
+## 23.6 Generation Experience
+
+What happened?
+
+## 23.7 Generated Code Quality
+
+Observe:
+
+- structure
+- naming
+- readability
+- usability
+
+## 23.8 Errors/Bugs
+
+For each issue:
+
+```text
+Title:
+Environment:
+Steps to reproduce:
+Expected:
+Actual:
+Error:
+Workaround:
+Suggested improvement:
+```
+
+## 23.9 Positive Observations
+
+Record what worked well.
+
+## 23.10 Suggested Improvements
+
+Give specific actionable suggestions.
+
+Avoid vague comments such as:
+
+`Documentation could be better.`
+
+Prefer:
+
+`The quick-start should show a complete OpenAPI-to-first-request workflow because ...`
+
+---
+
+# 24. MIT LICENSE
+
+Add an MIT License.
+
+Ensure copyright attribution uses the correct project author/year.
+
+Do not copy another project's ownership information.
+
+---
+
+# 25. CONTRIBUTING DOCUMENT
+
+Optional if time permits.
+
+Create a short:
+
+`CONTRIBUTING.md`
+
+Explain:
+
+- Setup
+- Testing
+- Pull requests
+- Generated-code considerations
+
+Do not prioritize this over core assignment requirements.
+
+---
+
+# 26. CHANGELOG
+
+Optional/lightweight.
+
+Create:
+
+`CHANGELOG.md`
+
+Initial entry may document:
+
+- Initial SDK generation
+- Initial tests
+- Documentation
+
+Do not create artificial release history.
+
+---
+
+# 27. CI CHECK
+
+Only if time/scope permits.
+
+Create a minimal GitHub Actions workflow that can run:
+
+```text
+Install
+→ Unit tests
+→ Build
+```
+
+Do NOT expose API keys.
+
+Do NOT require a real API key for ordinary pull-request CI.
+
+Live integration testing should remain separate unless GitHub Secrets are intentionally configured.
+
+Do not let CI configuration consume disproportionate time.
+
+---
+
+# 28. FINAL LOCAL QA
+
+Before publishing, perform final verification.
+
+## 28.1 Build
+
+Build must be checked.
+
+## 28.2 Tests
+
+Run applicable tests.
+
+## 28.3 Example
+
+Run the basic example locally where appropriate.
+
+## 28.4 Git Status
+
+Review every file being committed.
+
+## 28.5 Secret Scan
+
+Check for sensitive values.
+
+## 28.6 Documentation Links
+
+Verify README links.
+
+## 28.7 Fresh-Developer Check
+
+Ask:
+
+"If I cloned this repository with no prior knowledge, could I understand and run it?"
+
+---
+
+# 29. GIT COMMIT STRATEGY
+
+Keep commits meaningful but do not waste assignment time creating excessive micro-commits.
+
+Possible commits:
+
+```text
+chore: initialize SDK project
+feat: generate SDK using Voxgig
+test: add SDK verification tests
+docs: add usage and developer experience report
+```
+
+Never include credentials in commit messages.
+
+---
+
+# 30. GITHUB PUBLICATION
+
+## 30.1 Create Repository
+
+Create repository under my own account.
+
+## 30.2 Verify Visibility
+
+The assignment requires open-source work, so ensure appropriate public visibility before submission.
+
+## 30.3 Push
+
+Push project.
+
+## 30.4 Inspect Public Repository
+
+After pushing, inspect what is actually visible publicly.
+
+Specifically verify:
+
+- `.env` absent
+- API key absent
+- README renders
+- LICENSE present
+- documentation accessible
+- repository structure understandable
+
+---
+
+# 31. POST-PUSH SECURITY CHECK
+
+Search the public repository for:
+
+- Real API key
+- Tokens
+- Passwords
+- `.env`
+- Unexpected logs
+- Debug dumps
+
+If a secret appears, revoke it immediately rather than merely deleting the file.
+
+---
+
+# 32. FINAL REQUIREMENT TRACEABILITY
+
+Create a small table in `docs/REQUIREMENTS.md`.
+
+Example:
+
+| Requirement | Implementation | Verification |
+|---|---|---|
+| Voxgig generator | Generated SDK | Generator command/output |
+| Free API | Selected SaaS API | API test |
+| Real testing | Integration test | PASS/FAIL |
+| Open source | GitHub repository | Public repository |
+| MIT | LICENSE | File present |
+| Security | Environment variables | Secret check |
+| DX report | Developer Experience document | File present |
+
+Do not claim PASS without evidence.
+
+---
+
+# 33. FINAL TASK CHECKLIST
+
+Before declaring completion verify:
+
+```text
+[ ] Suitable API selected
+[ ] Voxgig catalogue checked
+[ ] Free API access verified
+[ ] OpenAPI specification verified
+[ ] Voxgig generator used
+[ ] Generator command documented
+[ ] SDK generated
+[ ] Dependencies installed
+[ ] SDK builds
+[ ] Basic example works
+[ ] Unit testing completed
+[ ] Component testing considered/completed where meaningful
+[ ] Integration testing completed
+[ ] System workflow tested
+[ ] UAT completed
+[ ] Security check completed
+[ ] README completed
+[ ] REQUIREMENTS.md completed
+[ ] TASKS.md completed
+[ ] ARCHITECTURE.md completed
+[ ] IMPLEMENTATION.md completed
+[ ] TESTING.md completed
+[ ] SECURITY.md completed
+[ ] DEPLOYMENT.md completed
+[ ] DEVELOPER-EXPERIENCE.md completed
+[ ] MIT LICENSE present
+[ ] Real API key NOT committed
+[ ] .env NOT committed
+[ ] Git history checked for accidental secrets
+[ ] Repository published
+[ ] Public repository inspected
+[ ] Final assignment requirements reviewed
+```
+
+---
+
+# 34. SCOPE CONTROL
+
+This section is mandatory.
+
+DO NOT add unnecessary:
+
+- React frontend
+- backend server
+- database
+- Redis
+- Docker
+- Kubernetes
+- authentication system
+- user accounts
+- admin dashboard
+- cloud infrastructure
+- microservices
+
+unless the assignment actually requires them.
+
+This is an SDK generation and developer-experience exercise.
+
+Professional engineering means choosing the smallest architecture that correctly satisfies the requirement.
+
+---
+
+# 35. 30-MINUTE PRIORITY ORDER
+
+The assignment explicitly asks for a human-work time box.
+
+Therefore prioritize:
+
+## Priority 1 — Mandatory
+
+1. API validation
+2. Catalogue validation
+3. Security setup
+4. OpenAPI
+5. Voxgig generation
+6. Build
+7. Real API test
+8. README
+9. MIT License
+10. Developer Experience report
+11. GitHub publication
+12. Secret verification
+
+## Priority 2 — Valuable
+
+13. Focused unit tests
+14. Integration test
+15. Testing documentation
+16. Architecture documentation
+
+## Priority 3 — Only if time allows
+
+17. CI
+18. CONTRIBUTING
+19. CHANGELOG
+20. Additional test organization
+
+Never sacrifice the actual Voxgig evaluation just to create additional engineering files.
+
+---
+
+# 36. ERROR-HANDLING RULE
+
+If something fails:
+
+DO NOT endlessly troubleshoot it.
+
+Instead:
+
+1. Record the error.
+2. Record reproduction steps.
+3. Determine whether it appears related to Voxgig, the OpenAPI specification, the target API, or our environment.
+4. Attempt a reasonable minimal solution.
+5. Record the result.
+6. Continue according to the assignment time box.
+
+A genuine generator problem is valuable developer-experience feedback.
+
+---
+
+# 37. FINAL OUTPUT REPORT
+
+When all possible work is complete, give me a final report using this format:
+
+```text
+PROJECT STATUS
+==============
+
+Selected API:
+Repository:
+License:
+Generator:
+Human time spent:
+
+GENERATION
+----------
+Status:
+Command:
+Issues:
+
+BUILD
+-----
+Status:
+
+TESTING
+-------
+Unit:
+Component:
+Integration:
+System:
+UAT:
+Security:
+
+DOCUMENTATION
+-------------
+README:
+Requirements:
+Architecture:
+Implementation:
+Testing:
+Security:
+Deployment:
+Developer Experience:
+
+SECURITY
+--------
+.env tracked: YES/NO
+Real API key detected: YES/NO
+Secret history issue: YES/NO
+
+KNOWN ISSUES
+------------
+1.
+2.
+
+VOXGIG FEEDBACK
+---------------
+1.
+2.
+
+REMAINING TASKS
+---------------
+1.
+2.
+
+SUBMISSION READY:
+YES / NO
+```
+
+If `SUBMISSION READY = NO`, clearly explain exactly what remains.
+
+---
+
+# 38. OPERATING PRINCIPLE
+
+Throughout this project follow:
+
+UNDERSTAND
+→ VERIFY
+→ SECURE
+→ GENERATE
+→ BUILD
+→ TEST
+→ DOCUMENT
+→ REVIEW
+→ PUBLISH
+→ VERIFY AGAIN
+
+Do not optimize for the largest amount of code.
+
+Optimize for:
+
+- Correctness
+- Reproducibility
+- Security
+- Developer experience
+- Clear documentation
+- Honest reporting
+- Assignment compliance
+- Minimal unnecessary complexity
