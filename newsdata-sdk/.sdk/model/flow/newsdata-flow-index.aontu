@@ -1,0 +1,13 @@
+# Flows
+
+@"./newsdata-BasicArchiveFlow.aontu"
+@"./newsdata-BasicCountFlow.aontu"
+@"./newsdata-BasicCryptoFlow.aontu"
+@"./newsdata-BasicLatestFlow.aontu"
+@"./newsdata-BasicMarketFlow.aontu"
+@"./newsdata-BasicNewFlow.aontu"
+@"./newsdata-BasicSourceFlow.aontu"
+@"./newsdata-BasicWebsocketDeleteEnvelopeFlow.aontu"
+@"./newsdata-BasicWebsocketFlow.aontu"
+@"./newsdata-BasicWebsocketQueryListEnvelopeFlow.aontu"
+@"./newsdata-BasicWebsocketRegisterEnvelopeFlow.aontu"

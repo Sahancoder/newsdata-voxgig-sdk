@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "websocket_delete_envelope": {
+      "WEBSOCKET_DELETE_ENVELOPE00": {
+        "id": "WEBSOCKET_DELETE_ENVELOPE00"
+      },
+      "WEBSOCKET_DELETE_ENVELOPE01": {
+        "id": "WEBSOCKET_DELETE_ENVELOPE01"
+      },
+      "WEBSOCKET_DELETE_ENVELOPE02": {
+        "id": "WEBSOCKET_DELETE_ENVELOPE02"
+      }
+    }
+  },
+  "new": {
+    "websocket_delete_envelope": {
+      "websocket_delete_envelope_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /1/websocket/delete": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

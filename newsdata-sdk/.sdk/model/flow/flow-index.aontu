@@ -1,2 +1,13 @@
-# Operational Flows
+# Flows
 
+@"./BasicArchiveFlow.aontu"
+@"./BasicCountFlow.aontu"
+@"./BasicCryptoFlow.aontu"
+@"./BasicLatestFlow.aontu"
+@"./BasicMarketFlow.aontu"
+@"./BasicNewFlow.aontu"
+@"./BasicSourceFlow.aontu"
+@"./BasicWebsocketDeleteEnvelopeFlow.aontu"
+@"./BasicWebsocketFlow.aontu"
+@"./BasicWebsocketQueryListEnvelopeFlow.aontu"
+@"./BasicWebsocketRegisterEnvelopeFlow.aontu"

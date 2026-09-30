@@ -1,0 +1,91 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   newsdata-guide.aontu
+
+guide: {
+  metrics: count: entity: 11
+  metrics: count: path: 13
+  metrics: count: method: 13
+
+  entity: archive: {
+    path: "/1/archive": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
+    }
+  }
+
+  entity: count: {
+    path: "/1/count": {
+      op: load: method: *GET
+    }
+    path: "/1/crypto/count": {
+      op: load: method: *GET
+    }
+    path: "/1/market/count": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: crypto: {
+    path: "/1/crypto": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
+    }
+  }
+
+  entity: latest: {
+    path: "/1/latest": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
+    }
+  }
+
+  entity: market: {
+    path: "/1/market": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
+    }
+  }
+
+  entity: new: {
+    path: "/1/news": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
+    }
+  }
+
+  entity: source: {
+    path: "/1/sources": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
+    }
+  }
+
+  entity: websocket: {
+    path: "/ws/event": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: websocket_delete_envelope: {
+    path: "/1/websocket/delete": {
+      op: remove: method: *DELETE
+      op: remove: transform: res: *("`body.results`")|top
+    }
+  }
+
+  entity: websocket_query_list_envelope: {
+    path: "/1/websocket/fetch": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: websocket_register_envelope: {
+    path: "/1/websocket/register": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.results`")|top
+    }
+  }
+
+}

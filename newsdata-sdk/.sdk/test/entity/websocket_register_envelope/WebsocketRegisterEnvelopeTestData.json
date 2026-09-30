@@ -1,0 +1,36 @@
+{
+  "existing": {
+    "websocket_register_envelope": {
+      "WEBSOCKET_REGISTER_ENVELOPE00": {
+        "message": "s14",
+        "registration_id": "REGISTRATION01",
+        "id": "WEBSOCKET_REGISTER_ENVELOPE00"
+      },
+      "WEBSOCKET_REGISTER_ENVELOPE01": {
+        "message": "s28",
+        "registration_id": "REGISTRATION01",
+        "id": "WEBSOCKET_REGISTER_ENVELOPE01"
+      },
+      "WEBSOCKET_REGISTER_ENVELOPE02": {
+        "message": "s3c",
+        "registration_id": "REGISTRATION01",
+        "id": "WEBSOCKET_REGISTER_ENVELOPE02"
+      }
+    }
+  },
+  "new": {
+    "websocket_register_envelope": {
+      "websocket_register_envelope_ref01": {
+        "message": "s50",
+        "registration_id": "REGISTRATION01"
+      }
+    }
+  },
+  "requests": {
+    "POST /1/websocket/register": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

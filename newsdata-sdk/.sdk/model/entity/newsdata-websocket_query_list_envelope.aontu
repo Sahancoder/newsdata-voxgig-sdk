@@ -1,0 +1,81 @@
+# Entity: websocket_query_list_envelope
+
+main: kit: entity: websocket_query_list_envelope: {
+
+  alias: field: {}
+
+  fields: {
+    results: {
+      h: "Results"
+      n: "results"
+      r: true
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      t: "`$STRING`"
+    }
+    totalQueries: {
+      h: "Total Queries"
+      n: "totalQueries"
+      r: true
+      sh: "Number of active registrations for this API key."
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "websocket_query_list_envelope"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /1/websocket/fetch"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                k: "query"
+                n: "apikey"
+                or: "apikey"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/1/websocket/fetch"
+          q: {
+            exist: [
+              "apikey"
+            ]
+          }
+          s: [
+            {
+              lit: "1"
+            }
+            {
+              lit: "websocket"
+            }
+            {
+              lit: "fetch"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

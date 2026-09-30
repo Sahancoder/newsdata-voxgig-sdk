@@ -1,0 +1,46 @@
+{
+  "existing": {
+    "count": {
+      "COUNT00": {
+        "results": {},
+        "status": "s15",
+        "id": "COUNT00"
+      },
+      "COUNT01": {
+        "results": {},
+        "status": "s29",
+        "id": "COUNT01"
+      },
+      "COUNT02": {
+        "results": {},
+        "status": "s3d",
+        "id": "COUNT02"
+      }
+    }
+  },
+  "new": {
+    "count": {
+      "count_ref01": {
+        "results": {},
+        "status": "s51"
+      }
+    }
+  },
+  "requests": {
+    "GET /1/count": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /1/market/count": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /1/crypto/count": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

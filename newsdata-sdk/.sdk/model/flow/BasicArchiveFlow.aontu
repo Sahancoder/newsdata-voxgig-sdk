@@ -1,0 +1,22 @@
+# BasicArchiveFlow
+
+main: kit: flow: BasicArchiveFlow:
+{
+  entity: "archive",
+  kind: "basic",
+  name: "BasicArchiveFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "archive_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicArchiveFlow"
+}

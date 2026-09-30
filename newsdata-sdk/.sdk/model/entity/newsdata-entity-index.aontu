@@ -1,0 +1,13 @@
+# Entity Models
+
+@"./newsdata-archive.aontu"
+@"./newsdata-count.aontu"
+@"./newsdata-crypto.aontu"
+@"./newsdata-latest.aontu"
+@"./newsdata-market.aontu"
+@"./newsdata-new.aontu"
+@"./newsdata-source.aontu"
+@"./newsdata-websocket.aontu"
+@"./newsdata-websocket_delete_envelope.aontu"
+@"./newsdata-websocket_query_list_envelope.aontu"
+@"./newsdata-websocket_register_envelope.aontu"

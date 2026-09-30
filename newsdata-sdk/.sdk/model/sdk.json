@@ -1,0 +1,5941 @@
+{
+  "def": "newsdata-openapi.json",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": false,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "archive": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "ai_org": {
+              "a": true,
+              "h": "Ai Org",
+              "n": "ai_org",
+              "r": false,
+              "sh": "AI-extracted organization names.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "ai_region": {
+              "a": true,
+              "h": "Ai Region",
+              "n": "ai_region",
+              "r": false,
+              "sh": "AI-extracted regions, e.g.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "ai_summary": {
+              "a": true,
+              "h": "Ai Summary",
+              "n": "ai_summary",
+              "r": false,
+              "sh": "AI-generated article summary.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "ai_tag": {
+              "a": true,
+              "h": "Ai Tag",
+              "n": "ai_tag",
+              "r": false,
+              "sh": "AI-classified topic tags.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "article_id": {
+              "a": true,
+              "h": "Article Id",
+              "n": "article_id",
+              "r": true,
+              "sh": "Unique article identifier (32 characters).",
+              "t": "`$STRING`"
+            },
+            "category": {
+              "a": true,
+              "h": "Category",
+              "n": "category",
+              "r": false,
+              "sh": "Article categories.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Full article text.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "country": {
+              "a": true,
+              "h": "Country",
+              "n": "country",
+              "r": false,
+              "sh": "Country names, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "creator": {
+              "a": true,
+              "h": "Creator",
+              "n": "creator",
+              "r": false,
+              "sh": "Article author(s).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "datatype": {
+              "a": true,
+              "h": "Datatype",
+              "n": "datatype",
+              "r": false,
+              "sh": "Content type, e.g.",
+              "t": "`$STRING`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Short article description.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "duplicate": {
+              "a": true,
+              "h": "Duplicate",
+              "n": "duplicate",
+              "r": false,
+              "sh": "Whether the article is a duplicate of another article.",
+              "t": "`$BOOLEAN`"
+            },
+            "fetched_at": {
+              "a": true,
+              "h": "Fetched At",
+              "n": "fetched_at",
+              "r": false,
+              "sh": "When the article was collected, `YYYY-MM-DD HH:MM:SS`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "image_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "image_url",
+              "r": false,
+              "sh": "Article image URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "keywords": {
+              "a": true,
+              "h": "Keywords",
+              "n": "keywords",
+              "r": false,
+              "sh": "Article keywords.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "language": {
+              "a": true,
+              "h": "Language",
+              "n": "language",
+              "r": false,
+              "sh": "Language name, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "link": {
+              "a": true,
+              "fo": "uri",
+              "h": "Link",
+              "n": "link",
+              "r": false,
+              "sh": "Article URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDate": {
+              "a": true,
+              "h": "Pub Date",
+              "n": "pubDate",
+              "r": false,
+              "sh": "Publish date, `YYYY-MM-DD HH:MM:SS`, in the requested `timezone`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDateTZ": {
+              "a": true,
+              "h": "Pub Date Tz",
+              "n": "pubDateTZ",
+              "r": false,
+              "sh": "Timezone of the dates in this article.",
+              "t": "`$STRING`"
+            },
+            "sentiment": {
+              "a": true,
+              "h": "Sentiment",
+              "n": "sentiment",
+              "r": false,
+              "sh": "Overall sentiment: positive, neutral, or negative.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "sentiment_stats": {
+              "a": true,
+              "h": "Sentiment Stats",
+              "n": "sentiment_stats",
+              "r": false,
+              "sh": "Sentiment percentage breakdown.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "source_icon": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Icon",
+              "n": "source_icon",
+              "r": false,
+              "sh": "Source icon URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_id": {
+              "a": true,
+              "h": "Source Id",
+              "n": "source_id",
+              "r": false,
+              "sh": "Source id (usable with the `domain` filter).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_name": {
+              "a": true,
+              "h": "Source Name",
+              "n": "source_name",
+              "r": false,
+              "sh": "Source display name.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_priority": {
+              "a": true,
+              "h": "Source Priority",
+              "n": "source_priority",
+              "r": false,
+              "sh": "Source ranking (lower = higher-ranked).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Url",
+              "n": "source_url",
+              "r": false,
+              "sh": "Source website URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article title.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "video_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Video Url",
+              "n": "video_url",
+              "r": false,
+              "sh": "Article video URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            }
+          },
+          "name": "archive",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/archive",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "business,technology",
+                        "k": "query",
+                        "n": "category",
+                        "or": "category",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "us",
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "datatype",
+                        "or": "datatype",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecategory",
+                        "or": "excludecategory",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecountry",
+                        "or": "excludecountry",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "content,keywords",
+                        "k": "query",
+                        "n": "excludefield",
+                        "or": "excludefield",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-01",
+                        "k": "query",
+                        "n": "from_date",
+                        "or": "from_date",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "id",
+                        "or": "id",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "organization",
+                        "or": "organization",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1749547200000000000",
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "region",
+                        "or": "region",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment_score",
+                        "or": "sentiment_score",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "size",
+                        "or": "size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "pubdatedesc",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "Asia/Kolkata",
+                        "k": "query",
+                        "n": "timezone",
+                        "or": "timezone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-31",
+                        "k": "query",
+                        "n": "to_date",
+                        "or": "to_date",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "url",
+                        "or": "url",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/archive",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "category",
+                      "country",
+                      "creator",
+                      "datatype",
+                      "domain",
+                      "domainurl",
+                      "excludecategory",
+                      "excludecountry",
+                      "excludedomain",
+                      "excludefield",
+                      "excludelanguage",
+                      "from_date",
+                      "full_content",
+                      "id",
+                      "image",
+                      "language",
+                      "organization",
+                      "page",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "region",
+                      "removeduplicate",
+                      "sentiment",
+                      "sentiment_score",
+                      "size",
+                      "sort",
+                      "tag",
+                      "timezone",
+                      "to_date",
+                      "url",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "archive"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "count": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "results": {
+              "a": true,
+              "h": "Results",
+              "n": "results",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "name": "count",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/count",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "business,technology",
+                        "k": "query",
+                        "n": "category",
+                        "or": "category",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "us",
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "datatype",
+                        "or": "datatype",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecategory",
+                        "or": "excludecategory",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecountry",
+                        "or": "excludecountry",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-01",
+                        "k": "query",
+                        "n": "from_date",
+                        "or": "from_date",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "all",
+                        "k": "query",
+                        "n": "interval",
+                        "or": "interval",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "organization",
+                        "or": "organization",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "region",
+                        "or": "region",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment_score",
+                        "or": "sentiment_score",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "size",
+                        "or": "size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "pubdatedesc",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-31",
+                        "k": "query",
+                        "n": "to_date",
+                        "or": "to_date",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/count",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "category",
+                      "country",
+                      "creator",
+                      "datatype",
+                      "domain",
+                      "domainurl",
+                      "excludecategory",
+                      "excludecountry",
+                      "excludedomain",
+                      "excludelanguage",
+                      "from_date",
+                      "full_content",
+                      "image",
+                      "interval",
+                      "language",
+                      "organization",
+                      "page",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "region",
+                      "removeduplicate",
+                      "sentiment",
+                      "sentiment_score",
+                      "size",
+                      "sort",
+                      "tag",
+                      "to_date",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "count"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/market/count",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "us",
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "datatype",
+                        "or": "datatype",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecountry",
+                        "or": "excludecountry",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-01",
+                        "k": "query",
+                        "n": "from_date",
+                        "or": "from_date",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "all",
+                        "k": "query",
+                        "n": "interval",
+                        "or": "interval",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "aapl-us-vy,msft-us-vy",
+                        "k": "query",
+                        "n": "market_id",
+                        "or": "market_id",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "organization",
+                        "or": "organization",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment_score",
+                        "or": "sentiment_score",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "size",
+                        "or": "size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "pubdatedesc",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-31",
+                        "k": "query",
+                        "n": "to_date",
+                        "or": "to_date",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/market/count",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "country",
+                      "creator",
+                      "datatype",
+                      "domain",
+                      "domainurl",
+                      "excludecountry",
+                      "excludedomain",
+                      "excludelanguage",
+                      "from_date",
+                      "full_content",
+                      "image",
+                      "interval",
+                      "language",
+                      "market_id",
+                      "organization",
+                      "page",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "removeduplicate",
+                      "sentiment",
+                      "sentiment_score",
+                      "size",
+                      "sort",
+                      "tag",
+                      "to_date",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "market"
+                    },
+                    {
+                      "lit": "count"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/crypto/count",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "btc,eth",
+                        "k": "query",
+                        "n": "coin",
+                        "or": "coin",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-01",
+                        "k": "query",
+                        "n": "from_date",
+                        "or": "from_date",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "all",
+                        "k": "query",
+                        "n": "interval",
+                        "or": "interval",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "size",
+                        "or": "size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "pubdatedesc",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-31",
+                        "k": "query",
+                        "n": "to_date",
+                        "or": "to_date",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/crypto/count",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "coin",
+                      "domain",
+                      "domainurl",
+                      "excludedomain",
+                      "excludelanguage",
+                      "from_date",
+                      "full_content",
+                      "image",
+                      "interval",
+                      "language",
+                      "page",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "removeduplicate",
+                      "sentiment",
+                      "size",
+                      "sort",
+                      "tag",
+                      "to_date",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "crypto"
+                    },
+                    {
+                      "lit": "count"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "crypto": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "ai_tag": {
+              "a": true,
+              "h": "Ai Tag",
+              "n": "ai_tag",
+              "r": false,
+              "sh": "AI-classified topic tags (crypto-specific tag set).",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "article_id": {
+              "a": true,
+              "h": "Article Id",
+              "n": "article_id",
+              "r": true,
+              "sh": "Unique article identifier (32 characters).",
+              "t": "`$STRING`"
+            },
+            "coin": {
+              "a": true,
+              "h": "Coin",
+              "n": "coin",
+              "r": false,
+              "sh": "Cryptocurrencies the article mentions, by ticker symbol.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Full article text.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "creator": {
+              "a": true,
+              "h": "Creator",
+              "n": "creator",
+              "r": false,
+              "sh": "Article author(s).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Short article description.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "duplicate": {
+              "a": true,
+              "h": "Duplicate",
+              "n": "duplicate",
+              "r": false,
+              "sh": "Whether the article is a duplicate of another article.",
+              "t": "`$BOOLEAN`"
+            },
+            "fetched_at": {
+              "a": true,
+              "h": "Fetched At",
+              "n": "fetched_at",
+              "r": false,
+              "sh": "When the article was collected, `YYYY-MM-DD HH:MM:SS`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "image_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "image_url",
+              "r": false,
+              "sh": "Article image URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "keywords": {
+              "a": true,
+              "h": "Keywords",
+              "n": "keywords",
+              "r": false,
+              "sh": "Article keywords.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "language": {
+              "a": true,
+              "h": "Language",
+              "n": "language",
+              "r": false,
+              "sh": "Language name, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "link": {
+              "a": true,
+              "fo": "uri",
+              "h": "Link",
+              "n": "link",
+              "r": false,
+              "sh": "Article URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDate": {
+              "a": true,
+              "h": "Pub Date",
+              "n": "pubDate",
+              "r": false,
+              "sh": "Publish date, `YYYY-MM-DD HH:MM:SS`, in the requested `timezone`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDateTZ": {
+              "a": true,
+              "h": "Pub Date Tz",
+              "n": "pubDateTZ",
+              "r": false,
+              "sh": "Timezone of the dates in this article.",
+              "t": "`$STRING`"
+            },
+            "sentiment": {
+              "a": true,
+              "h": "Sentiment",
+              "n": "sentiment",
+              "r": false,
+              "sh": "Overall sentiment: positive, neutral, or negative.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "sentiment_stats": {
+              "a": true,
+              "h": "Sentiment Stats",
+              "n": "sentiment_stats",
+              "r": false,
+              "sh": "Sentiment percentage breakdown.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "source_icon": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Icon",
+              "n": "source_icon",
+              "r": false,
+              "sh": "Source icon URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_id": {
+              "a": true,
+              "h": "Source Id",
+              "n": "source_id",
+              "r": false,
+              "sh": "Source id (usable with the `domain` filter).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_name": {
+              "a": true,
+              "h": "Source Name",
+              "n": "source_name",
+              "r": false,
+              "sh": "Source display name.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_priority": {
+              "a": true,
+              "h": "Source Priority",
+              "n": "source_priority",
+              "r": false,
+              "sh": "Source ranking (lower = higher-ranked).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Url",
+              "n": "source_url",
+              "r": false,
+              "sh": "Source website URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article title.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "video_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Video Url",
+              "n": "video_url",
+              "r": false,
+              "sh": "Article video URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            }
+          },
+          "name": "crypto",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/crypto",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "btc,eth",
+                        "k": "query",
+                        "n": "coin",
+                        "or": "coin",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "content,keywords",
+                        "k": "query",
+                        "n": "excludefield",
+                        "or": "excludefield",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-01",
+                        "k": "query",
+                        "n": "from_date",
+                        "or": "from_date",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "id",
+                        "or": "id",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1749547200000000000",
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "size",
+                        "or": "size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "pubdatedesc",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "24",
+                        "k": "query",
+                        "n": "timeframe",
+                        "or": "timeframe",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "Asia/Kolkata",
+                        "k": "query",
+                        "n": "timezone",
+                        "or": "timezone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-31",
+                        "k": "query",
+                        "n": "to_date",
+                        "or": "to_date",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "url",
+                        "or": "url",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/crypto",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "coin",
+                      "domain",
+                      "domainurl",
+                      "excludedomain",
+                      "excludefield",
+                      "excludelanguage",
+                      "from_date",
+                      "full_content",
+                      "id",
+                      "image",
+                      "language",
+                      "page",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "removeduplicate",
+                      "sentiment",
+                      "size",
+                      "sort",
+                      "tag",
+                      "timeframe",
+                      "timezone",
+                      "to_date",
+                      "url",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "crypto"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "latest": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "ai_org": {
+              "a": true,
+              "h": "Ai Org",
+              "n": "ai_org",
+              "r": false,
+              "sh": "AI-extracted organization names.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "ai_region": {
+              "a": true,
+              "h": "Ai Region",
+              "n": "ai_region",
+              "r": false,
+              "sh": "AI-extracted regions, e.g.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "ai_summary": {
+              "a": true,
+              "h": "Ai Summary",
+              "n": "ai_summary",
+              "r": false,
+              "sh": "AI-generated article summary.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "ai_tag": {
+              "a": true,
+              "h": "Ai Tag",
+              "n": "ai_tag",
+              "r": false,
+              "sh": "AI-classified topic tags.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "article_id": {
+              "a": true,
+              "h": "Article Id",
+              "n": "article_id",
+              "r": true,
+              "sh": "Unique article identifier (32 characters).",
+              "t": "`$STRING`"
+            },
+            "category": {
+              "a": true,
+              "h": "Category",
+              "n": "category",
+              "r": false,
+              "sh": "Article categories.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Full article text.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "country": {
+              "a": true,
+              "h": "Country",
+              "n": "country",
+              "r": false,
+              "sh": "Country names, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "creator": {
+              "a": true,
+              "h": "Creator",
+              "n": "creator",
+              "r": false,
+              "sh": "Article author(s).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "datatype": {
+              "a": true,
+              "h": "Datatype",
+              "n": "datatype",
+              "r": false,
+              "sh": "Content type, e.g.",
+              "t": "`$STRING`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Short article description.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "duplicate": {
+              "a": true,
+              "h": "Duplicate",
+              "n": "duplicate",
+              "r": false,
+              "sh": "Whether the article is a duplicate of another article.",
+              "t": "`$BOOLEAN`"
+            },
+            "fetched_at": {
+              "a": true,
+              "h": "Fetched At",
+              "n": "fetched_at",
+              "r": false,
+              "sh": "When the article was collected, `YYYY-MM-DD HH:MM:SS`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "image_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "image_url",
+              "r": false,
+              "sh": "Article image URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "keywords": {
+              "a": true,
+              "h": "Keywords",
+              "n": "keywords",
+              "r": false,
+              "sh": "Article keywords.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "language": {
+              "a": true,
+              "h": "Language",
+              "n": "language",
+              "r": false,
+              "sh": "Language name, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "link": {
+              "a": true,
+              "fo": "uri",
+              "h": "Link",
+              "n": "link",
+              "r": false,
+              "sh": "Article URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDate": {
+              "a": true,
+              "h": "Pub Date",
+              "n": "pubDate",
+              "r": false,
+              "sh": "Publish date, `YYYY-MM-DD HH:MM:SS`, in the requested `timezone`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDateTZ": {
+              "a": true,
+              "h": "Pub Date Tz",
+              "n": "pubDateTZ",
+              "r": false,
+              "sh": "Timezone of the dates in this article.",
+              "t": "`$STRING`"
+            },
+            "sentiment": {
+              "a": true,
+              "h": "Sentiment",
+              "n": "sentiment",
+              "r": false,
+              "sh": "Overall sentiment: positive, neutral, or negative.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "sentiment_stats": {
+              "a": true,
+              "h": "Sentiment Stats",
+              "n": "sentiment_stats",
+              "r": false,
+              "sh": "Sentiment percentage breakdown.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "source_icon": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Icon",
+              "n": "source_icon",
+              "r": false,
+              "sh": "Source icon URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_id": {
+              "a": true,
+              "h": "Source Id",
+              "n": "source_id",
+              "r": false,
+              "sh": "Source id (usable with the `domain` filter).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_name": {
+              "a": true,
+              "h": "Source Name",
+              "n": "source_name",
+              "r": false,
+              "sh": "Source display name.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_priority": {
+              "a": true,
+              "h": "Source Priority",
+              "n": "source_priority",
+              "r": false,
+              "sh": "Source ranking (lower = higher-ranked).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Url",
+              "n": "source_url",
+              "r": false,
+              "sh": "Source website URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article title.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "video_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Video Url",
+              "n": "video_url",
+              "r": false,
+              "sh": "Article video URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            }
+          },
+          "name": "latest",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/latest",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "business,technology",
+                        "k": "query",
+                        "n": "category",
+                        "or": "category",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "us",
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "datatype",
+                        "or": "datatype",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecategory",
+                        "or": "excludecategory",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecountry",
+                        "or": "excludecountry",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "content,keywords",
+                        "k": "query",
+                        "n": "excludefield",
+                        "or": "excludefield",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "id",
+                        "or": "id",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "organization",
+                        "or": "organization",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1749547200000000000",
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "region",
+                        "or": "region",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment_score",
+                        "or": "sentiment_score",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "size",
+                        "or": "size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "pubdatedesc",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "24",
+                        "k": "query",
+                        "n": "timeframe",
+                        "or": "timeframe",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "Asia/Kolkata",
+                        "k": "query",
+                        "n": "timezone",
+                        "or": "timezone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "url",
+                        "or": "url",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/latest",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "category",
+                      "country",
+                      "creator",
+                      "datatype",
+                      "domain",
+                      "domainurl",
+                      "excludecategory",
+                      "excludecountry",
+                      "excludedomain",
+                      "excludefield",
+                      "excludelanguage",
+                      "full_content",
+                      "id",
+                      "image",
+                      "language",
+                      "organization",
+                      "page",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "region",
+                      "removeduplicate",
+                      "sentiment",
+                      "sentiment_score",
+                      "size",
+                      "sort",
+                      "tag",
+                      "timeframe",
+                      "timezone",
+                      "url",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "latest"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "market": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "ai_org": {
+              "a": true,
+              "h": "Ai Org",
+              "n": "ai_org",
+              "r": false,
+              "sh": "AI-extracted organization names.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "ai_summary": {
+              "a": true,
+              "h": "Ai Summary",
+              "n": "ai_summary",
+              "r": false,
+              "sh": "AI-generated article summary.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "ai_tag": {
+              "a": true,
+              "h": "Ai Tag",
+              "n": "ai_tag",
+              "r": false,
+              "sh": "AI-classified topic tags.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "article_id": {
+              "a": true,
+              "h": "Article Id",
+              "n": "article_id",
+              "r": true,
+              "sh": "Unique article identifier (32 characters).",
+              "t": "`$STRING`"
+            },
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Full article text.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "country": {
+              "a": true,
+              "h": "Country",
+              "n": "country",
+              "r": false,
+              "sh": "Country names, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "creator": {
+              "a": true,
+              "h": "Creator",
+              "n": "creator",
+              "r": false,
+              "sh": "Article author(s).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "datatype": {
+              "a": true,
+              "h": "Datatype",
+              "n": "datatype",
+              "r": false,
+              "sh": "Content type, e.g.",
+              "t": "`$STRING`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Short article description.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "duplicate": {
+              "a": true,
+              "h": "Duplicate",
+              "n": "duplicate",
+              "r": false,
+              "sh": "Whether the article is a duplicate of another article.",
+              "t": "`$BOOLEAN`"
+            },
+            "fetched_at": {
+              "a": true,
+              "h": "Fetched At",
+              "n": "fetched_at",
+              "r": false,
+              "sh": "When the article was collected, `YYYY-MM-DD HH:MM:SS`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "image_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "image_url",
+              "r": false,
+              "sh": "Article image URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "keywords": {
+              "a": true,
+              "h": "Keywords",
+              "n": "keywords",
+              "r": false,
+              "sh": "Article keywords.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "language": {
+              "a": true,
+              "h": "Language",
+              "n": "language",
+              "r": false,
+              "sh": "Language name, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "link": {
+              "a": true,
+              "fo": "uri",
+              "h": "Link",
+              "n": "link",
+              "r": false,
+              "sh": "Article URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "market_id": {
+              "a": true,
+              "h": "Market Id",
+              "n": "market_id",
+              "r": false,
+              "sh": "Unique market identifiers for the tickers in `symbol` — the values accepted by the `market_id` filter.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDate": {
+              "a": true,
+              "h": "Pub Date",
+              "n": "pubDate",
+              "r": false,
+              "sh": "Publish date, `YYYY-MM-DD HH:MM:SS`, in the requested `timezone`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDateTZ": {
+              "a": true,
+              "h": "Pub Date Tz",
+              "n": "pubDateTZ",
+              "r": false,
+              "sh": "Timezone of the dates in this article.",
+              "t": "`$STRING`"
+            },
+            "sentiment": {
+              "a": true,
+              "h": "Sentiment",
+              "n": "sentiment",
+              "r": false,
+              "sh": "Overall sentiment: positive, neutral, or negative.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "sentiment_stats": {
+              "a": true,
+              "h": "Sentiment Stats",
+              "n": "sentiment_stats",
+              "r": false,
+              "sh": "Sentiment percentage breakdown.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "source_icon": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Icon",
+              "n": "source_icon",
+              "r": false,
+              "sh": "Source icon URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_id": {
+              "a": true,
+              "h": "Source Id",
+              "n": "source_id",
+              "r": false,
+              "sh": "Source id (usable with the `domain` filter).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_name": {
+              "a": true,
+              "h": "Source Name",
+              "n": "source_name",
+              "r": false,
+              "sh": "Source display name.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_priority": {
+              "a": true,
+              "h": "Source Priority",
+              "n": "source_priority",
+              "r": false,
+              "sh": "Source ranking (lower = higher-ranked).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Url",
+              "n": "source_url",
+              "r": false,
+              "sh": "Source website URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "symbol": {
+              "a": true,
+              "h": "Symbol",
+              "n": "symbol",
+              "r": false,
+              "sh": "Stock ticker symbols the article mentions.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article title.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "video_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Video Url",
+              "n": "video_url",
+              "r": false,
+              "sh": "Article video URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            }
+          },
+          "name": "market",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/market",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "us",
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "datatype",
+                        "or": "datatype",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecountry",
+                        "or": "excludecountry",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "content,keywords",
+                        "k": "query",
+                        "n": "excludefield",
+                        "or": "excludefield",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-01",
+                        "k": "query",
+                        "n": "from_date",
+                        "or": "from_date",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "id",
+                        "or": "id",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "aapl-us-vy,msft-us-vy",
+                        "k": "query",
+                        "n": "market_id",
+                        "or": "market_id",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "organization",
+                        "or": "organization",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1749547200000000000",
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment_score",
+                        "or": "sentiment_score",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "size",
+                        "or": "size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "pubdatedesc",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "24",
+                        "k": "query",
+                        "n": "timeframe",
+                        "or": "timeframe",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "Asia/Kolkata",
+                        "k": "query",
+                        "n": "timezone",
+                        "or": "timezone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "2026-05-31",
+                        "k": "query",
+                        "n": "to_date",
+                        "or": "to_date",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "url",
+                        "or": "url",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/market",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "country",
+                      "creator",
+                      "datatype",
+                      "domain",
+                      "domainurl",
+                      "excludecountry",
+                      "excludedomain",
+                      "excludefield",
+                      "excludelanguage",
+                      "from_date",
+                      "full_content",
+                      "id",
+                      "image",
+                      "language",
+                      "market_id",
+                      "organization",
+                      "page",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "removeduplicate",
+                      "sentiment",
+                      "sentiment_score",
+                      "size",
+                      "sort",
+                      "tag",
+                      "timeframe",
+                      "timezone",
+                      "to_date",
+                      "url",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "market"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "new": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "ai_org": {
+              "a": true,
+              "h": "Ai Org",
+              "n": "ai_org",
+              "r": false,
+              "sh": "AI-extracted organization names.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "ai_region": {
+              "a": true,
+              "h": "Ai Region",
+              "n": "ai_region",
+              "r": false,
+              "sh": "AI-extracted regions, e.g.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "ai_summary": {
+              "a": true,
+              "h": "Ai Summary",
+              "n": "ai_summary",
+              "r": false,
+              "sh": "AI-generated article summary.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "ai_tag": {
+              "a": true,
+              "h": "Ai Tag",
+              "n": "ai_tag",
+              "r": false,
+              "sh": "AI-classified topic tags.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "article_id": {
+              "a": true,
+              "h": "Article Id",
+              "n": "article_id",
+              "r": true,
+              "sh": "Unique article identifier (32 characters).",
+              "t": "`$STRING`"
+            },
+            "category": {
+              "a": true,
+              "h": "Category",
+              "n": "category",
+              "r": false,
+              "sh": "Article categories.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Full article text.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "country": {
+              "a": true,
+              "h": "Country",
+              "n": "country",
+              "r": false,
+              "sh": "Country names, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "creator": {
+              "a": true,
+              "h": "Creator",
+              "n": "creator",
+              "r": false,
+              "sh": "Article author(s).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "datatype": {
+              "a": true,
+              "h": "Datatype",
+              "n": "datatype",
+              "r": false,
+              "sh": "Content type, e.g.",
+              "t": "`$STRING`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Short article description.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "duplicate": {
+              "a": true,
+              "h": "Duplicate",
+              "n": "duplicate",
+              "r": false,
+              "sh": "Whether the article is a duplicate of another article.",
+              "t": "`$BOOLEAN`"
+            },
+            "fetched_at": {
+              "a": true,
+              "h": "Fetched At",
+              "n": "fetched_at",
+              "r": false,
+              "sh": "When the article was collected, `YYYY-MM-DD HH:MM:SS`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "image_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "image_url",
+              "r": false,
+              "sh": "Article image URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "keywords": {
+              "a": true,
+              "h": "Keywords",
+              "n": "keywords",
+              "r": false,
+              "sh": "Article keywords.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "language": {
+              "a": true,
+              "h": "Language",
+              "n": "language",
+              "r": false,
+              "sh": "Language name, e.g.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "link": {
+              "a": true,
+              "fo": "uri",
+              "h": "Link",
+              "n": "link",
+              "r": false,
+              "sh": "Article URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDate": {
+              "a": true,
+              "h": "Pub Date",
+              "n": "pubDate",
+              "r": false,
+              "sh": "Publish date, `YYYY-MM-DD HH:MM:SS`, in the requested `timezone`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "pubDateTZ": {
+              "a": true,
+              "h": "Pub Date Tz",
+              "n": "pubDateTZ",
+              "r": false,
+              "sh": "Timezone of the dates in this article.",
+              "t": "`$STRING`"
+            },
+            "sentiment": {
+              "a": true,
+              "h": "Sentiment",
+              "n": "sentiment",
+              "r": false,
+              "sh": "Overall sentiment: positive, neutral, or negative.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "sentiment_stats": {
+              "a": true,
+              "h": "Sentiment Stats",
+              "n": "sentiment_stats",
+              "r": false,
+              "sh": "Sentiment percentage breakdown.",
+              "t": "`$ANY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 0
+              }
+            },
+            "source_icon": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Icon",
+              "n": "source_icon",
+              "r": false,
+              "sh": "Source icon URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_id": {
+              "a": true,
+              "h": "Source Id",
+              "n": "source_id",
+              "r": false,
+              "sh": "Source id (usable with the `domain` filter).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_name": {
+              "a": true,
+              "h": "Source Name",
+              "n": "source_name",
+              "r": false,
+              "sh": "Source display name.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_priority": {
+              "a": true,
+              "h": "Source Priority",
+              "n": "source_priority",
+              "r": false,
+              "sh": "Source ranking (lower = higher-ranked).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "source_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Source Url",
+              "n": "source_url",
+              "r": false,
+              "sh": "Source website URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article title.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "video_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Video Url",
+              "n": "video_url",
+              "r": false,
+              "sh": "Article video URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            }
+          },
+          "name": "new",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/news",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "business,technology",
+                        "k": "query",
+                        "n": "category",
+                        "or": "category",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "us",
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "datatype",
+                        "or": "datatype",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecategory",
+                        "or": "excludecategory",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecountry",
+                        "or": "excludecountry",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "content,keywords",
+                        "k": "query",
+                        "n": "excludefield",
+                        "or": "excludefield",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "id",
+                        "or": "id",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "organization",
+                        "or": "organization",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "1749547200000000000",
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "region",
+                        "or": "region",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment_score",
+                        "or": "sentiment_score",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "size",
+                        "or": "size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "pubdatedesc",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "24",
+                        "k": "query",
+                        "n": "timeframe",
+                        "or": "timeframe",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "Asia/Kolkata",
+                        "k": "query",
+                        "n": "timezone",
+                        "or": "timezone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "url",
+                        "or": "url",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/news",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "category",
+                      "country",
+                      "creator",
+                      "datatype",
+                      "domain",
+                      "domainurl",
+                      "excludecategory",
+                      "excludecountry",
+                      "excludedomain",
+                      "excludefield",
+                      "excludelanguage",
+                      "full_content",
+                      "id",
+                      "image",
+                      "language",
+                      "organization",
+                      "page",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "region",
+                      "removeduplicate",
+                      "sentiment",
+                      "sentiment_score",
+                      "size",
+                      "sort",
+                      "tag",
+                      "timeframe",
+                      "timezone",
+                      "url",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "news"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "source": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "category": {
+              "a": true,
+              "h": "Category",
+              "n": "category",
+              "r": false,
+              "sh": "Categories the source covers.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "country": {
+              "a": true,
+              "h": "Country",
+              "n": "country",
+              "r": false,
+              "sh": "Countries the source covers.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Short description of the source.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "icon": {
+              "a": true,
+              "fo": "uri",
+              "h": "Icon",
+              "n": "icon",
+              "r": false,
+              "sh": "Source icon URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Source id.",
+              "t": "`$STRING`"
+            },
+            "language": {
+              "a": true,
+              "h": "Language",
+              "n": "language",
+              "r": false,
+              "sh": "Languages the source publishes in.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$ARRAY`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "last_fetch": {
+              "a": true,
+              "h": "Last Fetch",
+              "n": "last_fetch",
+              "r": false,
+              "sh": "When the source was last fetched, `YYYY-MM-DD HH:MM:SS`.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Source display name.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "priority": {
+              "a": true,
+              "h": "Priority",
+              "n": "priority",
+              "r": false,
+              "sh": "Source ranking (lower = higher-ranked).",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "total_article": {
+              "a": true,
+              "h": "Total Article",
+              "n": "total_article",
+              "r": false,
+              "sh": "Number of articles collected from this source.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$INTEGER`",
+                  "`$NULL`"
+                ]
+              ]
+            },
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "Source website URL.",
+              "t": [
+                "`$ONE`",
+                [
+                  "`$STRING`",
+                  "`$NULL`"
+                ]
+              ]
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "source",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/sources",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "business,technology",
+                        "k": "query",
+                        "n": "category",
+                        "or": "category",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "us",
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/sources",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "category",
+                      "country",
+                      "domainurl",
+                      "language",
+                      "prioritydomain"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "sources"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "websocket": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "websocket",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /ws/event",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "9b2d1e8a7c4f4b6e9d3a5c7e1f2a4b6c",
+                        "k": "query",
+                        "n": "registration_id",
+                        "or": "registration_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/ws/event",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "registration_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "ws"
+                    },
+                    {
+                      "lit": "event"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "websocket_delete_envelope": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "websocket_delete_envelope",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /1/websocket/delete",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "9b2d1e8a7c4f4b6e9d3a5c7e1f2a4b6c",
+                        "k": "query",
+                        "n": "registration_id",
+                        "or": "registration_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/1/websocket/delete",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "registration_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "websocket"
+                    },
+                    {
+                      "lit": "delete"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "websocket_query_list_envelope": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "results": {
+              "a": true,
+              "h": "Results",
+              "n": "results",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "totalQueries": {
+              "a": true,
+              "h": "Total Queries",
+              "n": "totalQueries",
+              "r": true,
+              "sh": "Number of active registrations for this API key.",
+              "t": "`$INTEGER`"
+            }
+          },
+          "name": "websocket_query_list_envelope",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /1/websocket/fetch",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/1/websocket/fetch",
+                  "q": {
+                    "exist": [
+                      "apikey"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "websocket"
+                    },
+                    {
+                      "lit": "fetch"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "websocket_register_envelope": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "message": {
+              "a": true,
+              "h": "Message",
+              "n": "message",
+              "r": true,
+              "sh": "Human-readable confirmation.",
+              "t": "`$STRING`"
+            },
+            "registration_id": {
+              "a": true,
+              "h": "Registration Id",
+              "n": "registration_id",
+              "r": true,
+              "sh": "Identifier of the registered query (32 characters).",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "websocket_register_envelope",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /1/websocket/register",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "k": "query",
+                        "n": "apikey",
+                        "or": "apikey",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "business,technology",
+                        "k": "query",
+                        "n": "category",
+                        "or": "category",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "us",
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "datatype",
+                        "or": "datatype",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc,cnn",
+                        "k": "query",
+                        "n": "domain",
+                        "or": "domain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "bbc.com,cnn.com",
+                        "k": "query",
+                        "n": "domainurl",
+                        "or": "domainurl",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecategory",
+                        "or": "excludecategory",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludecountry",
+                        "or": "excludecountry",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludedomain",
+                        "or": "excludedomain",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "content,keywords",
+                        "k": "query",
+                        "n": "excludefield",
+                        "or": "excludefield",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "excludelanguage",
+                        "or": "excludelanguage",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "full_content",
+                        "or": "full_content",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "image",
+                        "or": "image",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en,hi",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "organization",
+                        "or": "organization",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "prioritydomain",
+                        "or": "prioritydomain",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "elections",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_meta",
+                        "or": "qInMeta",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "q_in_title",
+                        "or": "qInTitle",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "region",
+                        "or": "region",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "removeduplicate",
+                        "or": "removeduplicate",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment",
+                        "or": "sentiment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sentiment_score",
+                        "or": "sentiment_score",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "Asia/Kolkata",
+                        "k": "query",
+                        "n": "timezone",
+                        "or": "timezone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "video",
+                        "or": "video",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/1/websocket/register",
+                  "q": {
+                    "exist": [
+                      "apikey",
+                      "category",
+                      "country",
+                      "creator",
+                      "datatype",
+                      "domain",
+                      "domainurl",
+                      "excludecategory",
+                      "excludecountry",
+                      "excludedomain",
+                      "excludefield",
+                      "excludelanguage",
+                      "full_content",
+                      "image",
+                      "language",
+                      "organization",
+                      "prioritydomain",
+                      "q",
+                      "q_in_meta",
+                      "q_in_title",
+                      "region",
+                      "removeduplicate",
+                      "sentiment",
+                      "sentiment_score",
+                      "tag",
+                      "timezone",
+                      "video"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "1"
+                    },
+                    {
+                      "lit": "websocket"
+                    },
+                    {
+                      "lit": "register"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.results`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicArchiveFlow": {
+          "active": true,
+          "entity": "archive",
+          "key$": "BasicArchiveFlow",
+          "kind": "basic",
+          "name": "BasicArchiveFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "archive_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCountFlow": {
+          "active": true,
+          "entity": "count",
+          "key$": "BasicCountFlow",
+          "kind": "basic",
+          "name": "BasicCountFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "count_ref01",
+                "srcdatavar": "count_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-count_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCryptoFlow": {
+          "active": true,
+          "entity": "crypto",
+          "key$": "BasicCryptoFlow",
+          "kind": "basic",
+          "name": "BasicCryptoFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "crypto_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicLatestFlow": {
+          "active": true,
+          "entity": "latest",
+          "key$": "BasicLatestFlow",
+          "kind": "basic",
+          "name": "BasicLatestFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "latest_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicMarketFlow": {
+          "active": true,
+          "entity": "market",
+          "key$": "BasicMarketFlow",
+          "kind": "basic",
+          "name": "BasicMarketFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "market_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicNewFlow": {
+          "active": true,
+          "entity": "new",
+          "key$": "BasicNewFlow",
+          "kind": "basic",
+          "name": "BasicNewFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "new_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicSourceFlow": {
+          "active": true,
+          "entity": "source",
+          "key$": "BasicSourceFlow",
+          "kind": "basic",
+          "name": "BasicSourceFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "source_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicWebsocketDeleteEnvelopeFlow": {
+          "active": true,
+          "entity": "websocket_delete_envelope",
+          "key$": "BasicWebsocketDeleteEnvelopeFlow",
+          "kind": "basic",
+          "name": "BasicWebsocketDeleteEnvelopeFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicWebsocketFlow": {
+          "active": true,
+          "entity": "websocket",
+          "key$": "BasicWebsocketFlow",
+          "kind": "basic",
+          "name": "BasicWebsocketFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "websocket_ref01",
+                "srcdatavar": "websocket_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-websocket_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicWebsocketQueryListEnvelopeFlow": {
+          "active": true,
+          "entity": "websocket_query_list_envelope",
+          "key$": "BasicWebsocketQueryListEnvelopeFlow",
+          "kind": "basic",
+          "name": "BasicWebsocketQueryListEnvelopeFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "websocket_query_list_envelope_ref01",
+                "srcdatavar": "websocket_query_list_envelope_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-websocket_query_list_envelope_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicWebsocketRegisterEnvelopeFlow": {
+          "active": true,
+          "entity": "websocket_register_envelope",
+          "key$": "BasicWebsocketRegisterEnvelopeFlow",
+          "kind": "basic",
+          "name": "BasicWebsocketRegisterEnvelopeFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "websocket_register_envelope_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        }
+      },
+      "info": {
+        "contact": {
+          "email": "support@newsdata.io",
+          "name": "NewsData.io support",
+          "url": "https://newsdata.io/contact"
+        },
+        "description": "REST API returning JSON. Every read endpoint is `GET`; the two state-changing WebSocket management endpoints use `POST` (`/1/websocket/register`) and `DELETE` (`/1/websocket/delete`). All parameters — including for `POST`/`DELETE` — are sent in the query string, never in a request body.\n\n**Authentication.** Send your API key either as the `apikey` query-string parameter or as the `X-ACCESS-KEY` HTTP header. One of the two is required. Parameter names are case-insensitive.\n\n**Credits & rate limits.** Each call costs a fixed number of API credits (`/latest`, `/news`, `/crypto`, `/market`, `/sources` = 1 credit; `/archive` = 5 credits; `/count`, `/crypto/count`, `/market/count` = 50 credits; the `/websocket/*` management endpoints are free — instead, each article delivered over the WebSocket stream costs 1 credit per connected device). The response headers `X-RateLimit-Remaining` and `X-API-Limit-Remaining` report your remaining request budget and remaining API credits.\n\n**Plan-based limits.** Some limits depend on your plan: the number of values allowed per filter (default 5), the maximum search-query length (default 100 characters), and the page size (default 50 on paid plans, 10 on the free plan).\n\n**Filter compatibility.** Some filters cannot be combined: use at most one of `q`, `qInTitle`, `qInMeta`; at most one of `domain`, `domainurl`, `excludedomain`; `country` or `excludecountry`; `category` or `excludecategory`; `language` or `excludelanguage`; `timeframe` or `from_date`/`to_date`. The `id` and `url` filters must be used alone.\n\n**Pagination.** With the default sort (`pubdatedesc` / `pubdateasc`), pass the `nextPage` value from the previous response as the `page` parameter. With `sort=relevancy|source|fetched_at`, pass a page number instead (up to 10,000 results in total).\n\n**Real-time WebSocket stream.** Plans with WebSocket access can register standing queries with `/1/websocket/register` and receive matching articles the moment they are collected by connecting to `wss://ws.newsdata.io/ws/event`. See the *Websocket* endpoints.",
+        "license": {
+          "name": "Proprietary",
+          "url": "https://newsdata.io/terms"
+        },
+        "security": {
+          "in": "query",
+          "name": "apikey",
+          "prefix": "",
+          "scheme": "ApiKeyQuery",
+          "type": "apiKey"
+        },
+        "servers": [
+          {
+            "description": "Production",
+            "url": "https://newsdata.io/api"
+          }
+        ],
+        "summary": "JSON REST API for newsdata.io — latest news, archive, crypto news, financial-market news, source directory, article counts, and a real-time WebSocket news stream.",
+        "termsOfService": "https://newsdata.io/terms",
+        "title": "NewsData.io API",
+        "version": "1.0.0",
+        "website": "https://newsdata.io/documentation"
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "newsdata",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      }
+    }
+  },
+  "name": "newsdata",
+  "origin": "voxgig-sdk"
+}

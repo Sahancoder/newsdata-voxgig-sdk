@@ -1,0 +1,68 @@
+# Entity: websocket
+
+main: kit: entity: websocket: {
+
+  alias: field: {}
+
+  name: "websocket"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /ws/event"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                k: "query"
+                n: "apikey"
+                or: "apikey"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "9b2d1e8a7c4f4b6e9d3a5c7e1f2a4b6c"
+                k: "query"
+                n: "registration_id"
+                or: "registration_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/ws/event"
+          q: {
+            exist: [
+              "apikey"
+              "registration_id"
+            ]
+          }
+          s: [
+            {
+              lit: "ws"
+            }
+            {
+              lit: "event"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

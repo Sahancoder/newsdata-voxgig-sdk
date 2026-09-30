@@ -1,0 +1,117 @@
+{
+  "existing": {
+    "crypto": {
+      "CRYPTO00": {
+        "ai_tag": "se6",
+        "article_id": "ARTICLE01",
+        "coin": "se8",
+        "content": "se9",
+        "creator": "sea",
+        "description": "seb",
+        "duplicate": true,
+        "fetched_at": "sed",
+        "image_url": "see",
+        "keywords": "sef",
+        "language": "sf0",
+        "link": "sf1",
+        "pubDate": "sf2",
+        "pubDateTZ": "sf3",
+        "sentiment": "sf4",
+        "sentiment_stats": "sf5",
+        "source_icon": "sf6",
+        "source_id": "SOURCE01",
+        "source_name": "sf8",
+        "source_priority": "sf9",
+        "source_url": "sfa",
+        "title": "sfb",
+        "video_url": "sfc"
+      },
+      "CRYPTO01": {
+        "ai_tag": "s1cc",
+        "article_id": "ARTICLE01",
+        "coin": "s1ce",
+        "content": "s1cf",
+        "creator": "s1d0",
+        "description": "s1d1",
+        "duplicate": true,
+        "fetched_at": "s1d3",
+        "image_url": "s1d4",
+        "keywords": "s1d5",
+        "language": "s1d6",
+        "link": "s1d7",
+        "pubDate": "s1d8",
+        "pubDateTZ": "s1d9",
+        "sentiment": "s1da",
+        "sentiment_stats": "s1db",
+        "source_icon": "s1dc",
+        "source_id": "SOURCE01",
+        "source_name": "s1de",
+        "source_priority": "s1df",
+        "source_url": "s1e0",
+        "title": "s1e1",
+        "video_url": "s1e2"
+      },
+      "CRYPTO02": {
+        "ai_tag": "s2b2",
+        "article_id": "ARTICLE01",
+        "coin": "s2b4",
+        "content": "s2b5",
+        "creator": "s2b6",
+        "description": "s2b7",
+        "duplicate": true,
+        "fetched_at": "s2b9",
+        "image_url": "s2ba",
+        "keywords": "s2bb",
+        "language": "s2bc",
+        "link": "s2bd",
+        "pubDate": "s2be",
+        "pubDateTZ": "s2bf",
+        "sentiment": "s2c0",
+        "sentiment_stats": "s2c1",
+        "source_icon": "s2c2",
+        "source_id": "SOURCE01",
+        "source_name": "s2c4",
+        "source_priority": "s2c5",
+        "source_url": "s2c6",
+        "title": "s2c7",
+        "video_url": "s2c8"
+      }
+    }
+  },
+  "new": {
+    "crypto": {
+      "crypto_ref01": {
+        "ai_tag": "s398",
+        "article_id": "ARTICLE01",
+        "coin": "s39a",
+        "content": "s39b",
+        "creator": "s39c",
+        "description": "s39d",
+        "duplicate": true,
+        "fetched_at": "s39f",
+        "image_url": "s3a0",
+        "keywords": "s3a1",
+        "language": "s3a2",
+        "link": "s3a3",
+        "pubDate": "s3a4",
+        "pubDateTZ": "s3a5",
+        "sentiment": "s3a6",
+        "sentiment_stats": "s3a7",
+        "source_icon": "s3a8",
+        "source_id": "SOURCE01",
+        "source_name": "s3aa",
+        "source_priority": "s3ab",
+        "source_url": "s3ac",
+        "title": "s3ad",
+        "video_url": "s3ae"
+      }
+    }
+  },
+  "requests": {
+    "GET /1/crypto": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

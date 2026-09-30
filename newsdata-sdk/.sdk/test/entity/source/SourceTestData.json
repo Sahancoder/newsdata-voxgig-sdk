@@ -1,0 +1,68 @@
+{
+  "existing": {
+    "source": {
+      "SOURCE00": {
+        "category": "s6e",
+        "country": "s6f",
+        "description": "s70",
+        "icon": "s71",
+        "id": "SOURCE00",
+        "language": "s73",
+        "last_fetch": "s74",
+        "name": "s75",
+        "priority": "s76",
+        "total_article": "s77",
+        "url": "s78"
+      },
+      "SOURCE01": {
+        "category": "sdc",
+        "country": "sdd",
+        "description": "sde",
+        "icon": "sdf",
+        "id": "SOURCE01",
+        "language": "se1",
+        "last_fetch": "se2",
+        "name": "se3",
+        "priority": "se4",
+        "total_article": "se5",
+        "url": "se6"
+      },
+      "SOURCE02": {
+        "category": "s14a",
+        "country": "s14b",
+        "description": "s14c",
+        "icon": "s14d",
+        "id": "SOURCE02",
+        "language": "s14f",
+        "last_fetch": "s150",
+        "name": "s151",
+        "priority": "s152",
+        "total_article": "s153",
+        "url": "s154"
+      }
+    }
+  },
+  "new": {
+    "source": {
+      "source_ref01": {
+        "category": "s1b8",
+        "country": "s1b9",
+        "description": "s1ba",
+        "icon": "s1bb",
+        "language": "s1bd",
+        "last_fetch": "s1be",
+        "name": "s1bf",
+        "priority": "s1c0",
+        "total_article": "s1c1",
+        "url": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "GET /1/sources": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

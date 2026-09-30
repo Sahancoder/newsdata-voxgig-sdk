@@ -7,7 +7,7 @@ sys: model: action: {
   sdkgen: load: 'build/sdkgen.js'
 }
 
-sys: model: order: action: 'apidef,sdkgen'
+sys: model: order: action: 'sdkgen'
 
 sys: model: watch: {
   'src': {}   # To catch fragment updates.

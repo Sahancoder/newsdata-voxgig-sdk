@@ -10,7 +10,7 @@
         }
       },
       "order": {
-        "action": "apidef,sdkgen"
+        "action": "sdkgen"
       },
       "watch": {
         "def": {},

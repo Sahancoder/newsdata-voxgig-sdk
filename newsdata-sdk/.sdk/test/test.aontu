@@ -1,4 +1,4 @@
 
-@"struct/test.aontu"
-@"primary/primary-test-index.aontu"
-@"feature/feature-test-index.aontu"
+@"test/struct/test.aontu"
+@"test/primary/primary-test-index.aontu"
+@"test/feature/feature-test-index.aontu"

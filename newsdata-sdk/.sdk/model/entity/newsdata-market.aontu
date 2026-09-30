@@ -1,0 +1,669 @@
+# Entity: market
+
+main: kit: entity: market: {
+
+  alias: field: {}
+
+  fields: {
+    ai_org: {
+      h: "Ai Org"
+      n: "ai_org"
+      r: false
+      sh: "AI-extracted organization names."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    ai_summary: {
+      h: "Ai Summary"
+      n: "ai_summary"
+      r: false
+      sh: "AI-generated article summary."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    ai_tag: {
+      h: "Ai Tag"
+      n: "ai_tag"
+      r: false
+      sh: "AI-classified topic tags."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    article_id: {
+      h: "Article Id"
+      n: "article_id"
+      r: true
+      sh: "Unique article identifier (32 characters)."
+      t: "`$STRING`"
+    }
+    content: {
+      h: "Content"
+      n: "content"
+      r: false
+      sh: "Full article text."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "Country names, e.g."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    creator: {
+      h: "Creator"
+      n: "creator"
+      r: false
+      sh: "Article author(s)."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    datatype: {
+      h: "Datatype"
+      n: "datatype"
+      r: false
+      sh: "Content type, e.g."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Short article description."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    duplicate: {
+      h: "Duplicate"
+      n: "duplicate"
+      r: false
+      sh: "Whether the article is a duplicate of another article."
+      t: "`$BOOLEAN`"
+    }
+    fetched_at: {
+      h: "Fetched At"
+      n: "fetched_at"
+      r: false
+      sh: "When the article was collected, `YYYY-MM-DD HH:MM:SS`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    image_url: {
+      fo: "uri"
+      h: "Image Url"
+      n: "image_url"
+      r: false
+      sh: "Article image URL."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    keywords: {
+      h: "Keywords"
+      n: "keywords"
+      r: false
+      sh: "Article keywords."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    language: {
+      h: "Language"
+      n: "language"
+      r: false
+      sh: "Language name, e.g."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    link: {
+      fo: "uri"
+      h: "Link"
+      n: "link"
+      r: false
+      sh: "Article URL."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    market_id: {
+      h: "Market Id"
+      n: "market_id"
+      r: false
+      sh: "Unique market identifiers for the tickers in `symbol` — the values accepted by the `market_id` filter."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    pubDate: {
+      h: "Pub Date"
+      n: "pubDate"
+      r: false
+      sh: "Publish date, `YYYY-MM-DD HH:MM:SS`, in the requested `timezone`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    pubDateTZ: {
+      h: "Pub Date Tz"
+      n: "pubDateTZ"
+      r: false
+      sh: "Timezone of the dates in this article."
+      t: "`$STRING`"
+    }
+    sentiment: {
+      h: "Sentiment"
+      n: "sentiment"
+      r: false
+      sh: "Overall sentiment: positive, neutral, or negative."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    sentiment_stats: {
+      h: "Sentiment Stats"
+      n: "sentiment_stats"
+      r: false
+      sh: "Sentiment percentage breakdown."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    source_icon: {
+      fo: "uri"
+      h: "Source Icon"
+      n: "source_icon"
+      r: false
+      sh: "Source icon URL."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    source_id: {
+      h: "Source Id"
+      n: "source_id"
+      r: false
+      sh: "Source id (usable with the `domain` filter)."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    source_name: {
+      h: "Source Name"
+      n: "source_name"
+      r: false
+      sh: "Source display name."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    source_priority: {
+      h: "Source Priority"
+      n: "source_priority"
+      r: false
+      sh: "Source ranking (lower = higher-ranked)."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    source_url: {
+      fo: "uri"
+      h: "Source Url"
+      n: "source_url"
+      r: false
+      sh: "Source website URL."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    symbol: {
+      h: "Symbol"
+      n: "symbol"
+      r: false
+      sh: "Stock ticker symbols the article mentions."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "Article title."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    video_url: {
+      fo: "uri"
+      h: "Video Url"
+      n: "video_url"
+      r: false
+      sh: "Article video URL."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  name: "market"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /1/market"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                k: "query"
+                n: "apikey"
+                or: "apikey"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "us"
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "creator"
+                or: "creator"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "datatype"
+                or: "datatype"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc,cnn"
+                k: "query"
+                n: "domain"
+                or: "domain"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc.com,cnn.com"
+                k: "query"
+                n: "domainurl"
+                or: "domainurl"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludecountry"
+                or: "excludecountry"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludedomain"
+                or: "excludedomain"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "content,keywords"
+                k: "query"
+                n: "excludefield"
+                or: "excludefield"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludelanguage"
+                or: "excludelanguage"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2026-05-01"
+                k: "query"
+                n: "from_date"
+                or: "from_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "full_content"
+                or: "full_content"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "id"
+                or: "id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "image"
+                or: "image"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "en,hi"
+                k: "query"
+                n: "language"
+                or: "language"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "aapl-us-vy,msft-us-vy"
+                k: "query"
+                n: "market_id"
+                or: "market_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "organization"
+                or: "organization"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "1749547200000000000"
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "prioritydomain"
+                or: "prioritydomain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "elections"
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q_in_meta"
+                or: "qInMeta"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q_in_title"
+                or: "qInTitle"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "removeduplicate"
+                or: "removeduplicate"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sentiment"
+                or: "sentiment"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sentiment_score"
+                or: "sentiment_score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "size"
+                or: "size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "pubdatedesc"
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "tag"
+                or: "tag"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "24"
+                k: "query"
+                n: "timeframe"
+                or: "timeframe"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "Asia/Kolkata"
+                k: "query"
+                n: "timezone"
+                or: "timezone"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2026-05-31"
+                k: "query"
+                n: "to_date"
+                or: "to_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "url"
+                or: "url"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "video"
+                or: "video"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/1/market"
+          q: {
+            exist: [
+              "apikey"
+              "country"
+              "creator"
+              "datatype"
+              "domain"
+              "domainurl"
+              "excludecountry"
+              "excludedomain"
+              "excludefield"
+              "excludelanguage"
+              "from_date"
+              "full_content"
+              "id"
+              "image"
+              "language"
+              "market_id"
+              "organization"
+              "page"
+              "prioritydomain"
+              "q"
+              "q_in_meta"
+              "q_in_title"
+              "removeduplicate"
+              "sentiment"
+              "sentiment_score"
+              "size"
+              "sort"
+              "tag"
+              "timeframe"
+              "timezone"
+              "to_date"
+              "url"
+              "video"
+            ]
+          }
+          s: [
+            {
+              lit: "1"
+            }
+            {
+              lit: "market"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.results`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

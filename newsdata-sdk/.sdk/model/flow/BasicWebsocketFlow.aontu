@@ -1,0 +1,28 @@
+# BasicWebsocketFlow
+
+main: kit: flow: BasicWebsocketFlow:
+{
+  entity: "websocket",
+  kind: "basic",
+  name: "BasicWebsocketFlow",
+  step: [
+    {
+      i: {
+        ref: "websocket_ref01",
+        srcdatavar: "websocket_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-websocket_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicWebsocketFlow"
+}

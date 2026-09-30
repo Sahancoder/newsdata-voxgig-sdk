@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "websocket": {
+      "WEBSOCKET00": {
+        "id": "WEBSOCKET00"
+      },
+      "WEBSOCKET01": {
+        "id": "WEBSOCKET01"
+      },
+      "WEBSOCKET02": {
+        "id": "WEBSOCKET02"
+      }
+    }
+  },
+  "new": {
+    "websocket": {
+      "websocket_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /ws/event": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

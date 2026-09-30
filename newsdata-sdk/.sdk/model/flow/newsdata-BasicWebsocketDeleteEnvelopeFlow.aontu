@@ -1,0 +1,9 @@
+# BasicWebsocketDeleteEnvelopeFlow
+
+main: kit: flow: BasicWebsocketDeleteEnvelopeFlow:
+{
+  entity: "websocket_delete_envelope",
+  kind: "basic",
+  name: "BasicWebsocketDeleteEnvelopeFlow",
+  "key$": "BasicWebsocketDeleteEnvelopeFlow"
+}

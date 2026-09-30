@@ -1,0 +1,28 @@
+# BasicWebsocketQueryListEnvelopeFlow
+
+main: kit: flow: BasicWebsocketQueryListEnvelopeFlow:
+{
+  entity: "websocket_query_list_envelope",
+  kind: "basic",
+  name: "BasicWebsocketQueryListEnvelopeFlow",
+  step: [
+    {
+      i: {
+        ref: "websocket_query_list_envelope_ref01",
+        srcdatavar: "websocket_query_list_envelope_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-websocket_query_list_envelope_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicWebsocketQueryListEnvelopeFlow"
+}

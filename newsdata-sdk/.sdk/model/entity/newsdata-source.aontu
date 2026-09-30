@@ -1,0 +1,247 @@
+# Entity: source
+
+main: kit: entity: source: {
+
+  alias: field: {}
+
+  fields: {
+    category: {
+      h: "Category"
+      n: "category"
+      r: false
+      sh: "Categories the source covers."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "Countries the source covers."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Short description of the source."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    icon: {
+      fo: "uri"
+      h: "Icon"
+      n: "icon"
+      r: false
+      sh: "Source icon URL."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Source id."
+      t: "`$STRING`"
+    }
+    language: {
+      h: "Language"
+      n: "language"
+      r: false
+      sh: "Languages the source publishes in."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    last_fetch: {
+      h: "Last Fetch"
+      n: "last_fetch"
+      r: false
+      sh: "When the source was last fetched, `YYYY-MM-DD HH:MM:SS`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Source display name."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    priority: {
+      h: "Priority"
+      n: "priority"
+      r: false
+      sh: "Source ranking (lower = higher-ranked)."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    total_article: {
+      h: "Total Article"
+      n: "total_article"
+      r: false
+      sh: "Number of articles collected from this source."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "Source website URL."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "source"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /1/sources"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                k: "query"
+                n: "apikey"
+                or: "apikey"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "business,technology"
+                k: "query"
+                n: "category"
+                or: "category"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "us"
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc.com,cnn.com"
+                k: "query"
+                n: "domainurl"
+                or: "domainurl"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "en,hi"
+                k: "query"
+                n: "language"
+                or: "language"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "prioritydomain"
+                or: "prioritydomain"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/1/sources"
+          q: {
+            exist: [
+              "apikey"
+              "category"
+              "country"
+              "domainurl"
+              "language"
+              "prioritydomain"
+            ]
+          }
+          s: [
+            {
+              lit: "1"
+            }
+            {
+              lit: "sources"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.results`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

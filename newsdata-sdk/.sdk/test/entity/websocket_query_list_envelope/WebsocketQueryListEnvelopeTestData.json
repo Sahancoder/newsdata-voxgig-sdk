@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "websocket_query_list_envelope": {
+      "WEBSOCKET_QUERY_LIST_ENVELOPE00": {
+        "results": {},
+        "status": "s1f",
+        "totalQueries": 32,
+        "id": "WEBSOCKET_QUERY_LIST_ENVELOPE00"
+      },
+      "WEBSOCKET_QUERY_LIST_ENVELOPE01": {
+        "results": {},
+        "status": "s3d",
+        "totalQueries": 62,
+        "id": "WEBSOCKET_QUERY_LIST_ENVELOPE01"
+      },
+      "WEBSOCKET_QUERY_LIST_ENVELOPE02": {
+        "results": {},
+        "status": "s5b",
+        "totalQueries": 92,
+        "id": "WEBSOCKET_QUERY_LIST_ENVELOPE02"
+      }
+    }
+  },
+  "new": {
+    "websocket_query_list_envelope": {
+      "websocket_query_list_envelope_ref01": {
+        "results": {},
+        "status": "s79",
+        "totalQueries": 122
+      }
+    }
+  },
+  "requests": {
+    "GET /1/websocket/fetch": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

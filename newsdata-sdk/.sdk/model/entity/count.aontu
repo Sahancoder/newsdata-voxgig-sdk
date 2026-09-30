@@ -1,0 +1,822 @@
+# Entity: count
+
+main: kit: entity: count: {
+
+  alias: field: {}
+
+  fields: {
+    results: {
+      h: "Results"
+      n: "results"
+      r: false
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "count"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /1/count"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                k: "query"
+                n: "apikey"
+                or: "apikey"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "business,technology"
+                k: "query"
+                n: "category"
+                or: "category"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "us"
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "creator"
+                or: "creator"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "datatype"
+                or: "datatype"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc,cnn"
+                k: "query"
+                n: "domain"
+                or: "domain"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc.com,cnn.com"
+                k: "query"
+                n: "domainurl"
+                or: "domainurl"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludecategory"
+                or: "excludecategory"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludecountry"
+                or: "excludecountry"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludedomain"
+                or: "excludedomain"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludelanguage"
+                or: "excludelanguage"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2026-05-01"
+                k: "query"
+                n: "from_date"
+                or: "from_date"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "full_content"
+                or: "full_content"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "image"
+                or: "image"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "all"
+                k: "query"
+                n: "interval"
+                or: "interval"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "en,hi"
+                k: "query"
+                n: "language"
+                or: "language"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "organization"
+                or: "organization"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "prioritydomain"
+                or: "prioritydomain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "elections"
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q_in_meta"
+                or: "qInMeta"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q_in_title"
+                or: "qInTitle"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "region"
+                or: "region"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "removeduplicate"
+                or: "removeduplicate"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sentiment"
+                or: "sentiment"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sentiment_score"
+                or: "sentiment_score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "size"
+                or: "size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "pubdatedesc"
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "tag"
+                or: "tag"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2026-05-31"
+                k: "query"
+                n: "to_date"
+                or: "to_date"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "video"
+                or: "video"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/1/count"
+          q: {
+            exist: [
+              "apikey"
+              "category"
+              "country"
+              "creator"
+              "datatype"
+              "domain"
+              "domainurl"
+              "excludecategory"
+              "excludecountry"
+              "excludedomain"
+              "excludelanguage"
+              "from_date"
+              "full_content"
+              "image"
+              "interval"
+              "language"
+              "organization"
+              "page"
+              "prioritydomain"
+              "q"
+              "q_in_meta"
+              "q_in_title"
+              "region"
+              "removeduplicate"
+              "sentiment"
+              "sentiment_score"
+              "size"
+              "sort"
+              "tag"
+              "to_date"
+              "video"
+            ]
+          }
+          s: [
+            {
+              lit: "1"
+            }
+            {
+              lit: "count"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /1/market/count"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                k: "query"
+                n: "apikey"
+                or: "apikey"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "us"
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "creator"
+                or: "creator"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "datatype"
+                or: "datatype"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc,cnn"
+                k: "query"
+                n: "domain"
+                or: "domain"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc.com,cnn.com"
+                k: "query"
+                n: "domainurl"
+                or: "domainurl"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludecountry"
+                or: "excludecountry"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludedomain"
+                or: "excludedomain"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludelanguage"
+                or: "excludelanguage"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2026-05-01"
+                k: "query"
+                n: "from_date"
+                or: "from_date"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "full_content"
+                or: "full_content"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "image"
+                or: "image"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "all"
+                k: "query"
+                n: "interval"
+                or: "interval"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "en,hi"
+                k: "query"
+                n: "language"
+                or: "language"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "aapl-us-vy,msft-us-vy"
+                k: "query"
+                n: "market_id"
+                or: "market_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "organization"
+                or: "organization"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "prioritydomain"
+                or: "prioritydomain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "elections"
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q_in_meta"
+                or: "qInMeta"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q_in_title"
+                or: "qInTitle"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "removeduplicate"
+                or: "removeduplicate"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sentiment"
+                or: "sentiment"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sentiment_score"
+                or: "sentiment_score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "size"
+                or: "size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "pubdatedesc"
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "tag"
+                or: "tag"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2026-05-31"
+                k: "query"
+                n: "to_date"
+                or: "to_date"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "video"
+                or: "video"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/1/market/count"
+          q: {
+            exist: [
+              "apikey"
+              "country"
+              "creator"
+              "datatype"
+              "domain"
+              "domainurl"
+              "excludecountry"
+              "excludedomain"
+              "excludelanguage"
+              "from_date"
+              "full_content"
+              "image"
+              "interval"
+              "language"
+              "market_id"
+              "organization"
+              "page"
+              "prioritydomain"
+              "q"
+              "q_in_meta"
+              "q_in_title"
+              "removeduplicate"
+              "sentiment"
+              "sentiment_score"
+              "size"
+              "sort"
+              "tag"
+              "to_date"
+              "video"
+            ]
+          }
+          s: [
+            {
+              lit: "1"
+            }
+            {
+              lit: "market"
+            }
+            {
+              lit: "count"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /1/crypto/count"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "pub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                k: "query"
+                n: "apikey"
+                or: "apikey"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "btc,eth"
+                k: "query"
+                n: "coin"
+                or: "coin"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc,cnn"
+                k: "query"
+                n: "domain"
+                or: "domain"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "bbc.com,cnn.com"
+                k: "query"
+                n: "domainurl"
+                or: "domainurl"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludedomain"
+                or: "excludedomain"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "excludelanguage"
+                or: "excludelanguage"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2026-05-01"
+                k: "query"
+                n: "from_date"
+                or: "from_date"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "full_content"
+                or: "full_content"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "image"
+                or: "image"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "all"
+                k: "query"
+                n: "interval"
+                or: "interval"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "en,hi"
+                k: "query"
+                n: "language"
+                or: "language"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "prioritydomain"
+                or: "prioritydomain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "elections"
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q_in_meta"
+                or: "qInMeta"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q_in_title"
+                or: "qInTitle"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "removeduplicate"
+                or: "removeduplicate"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sentiment"
+                or: "sentiment"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "size"
+                or: "size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "pubdatedesc"
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "tag"
+                or: "tag"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2026-05-31"
+                k: "query"
+                n: "to_date"
+                or: "to_date"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "video"
+                or: "video"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/1/crypto/count"
+          q: {
+            exist: [
+              "apikey"
+              "coin"
+              "domain"
+              "domainurl"
+              "excludedomain"
+              "excludelanguage"
+              "from_date"
+              "full_content"
+              "image"
+              "interval"
+              "language"
+              "page"
+              "prioritydomain"
+              "q"
+              "q_in_meta"
+              "q_in_title"
+              "removeduplicate"
+              "sentiment"
+              "size"
+              "sort"
+              "tag"
+              "to_date"
+              "video"
+            ]
+          }
+          s: [
+            {
+              lit: "1"
+            }
+            {
+              lit: "crypto"
+            }
+            {
+              lit: "count"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
